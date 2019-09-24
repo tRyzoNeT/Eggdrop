@@ -8,4 +8,3 @@ Ce qui est nécessaire au bon fonctionnement :: mysqltcl
 - Assurez-vous d'avoir une base de données MYSQL rapide et performant.
   - **disque dur SSD recommander ou NVME pour de meilleur performance**
   
-+ Re-Scene it... don't repack BiG!! XD
