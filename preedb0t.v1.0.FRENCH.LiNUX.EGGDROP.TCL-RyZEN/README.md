@@ -11,6 +11,7 @@ Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 **Config & FLAGS**
 
 iNDEX de nos FLAGS :: **ADD - DB - SEARCH - STATS**
+
 ADD :: 
 DB :: Affiche le nombre de release dans la database.
 SEARCH :: Recherche d'information dans la database.
