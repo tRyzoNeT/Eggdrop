@@ -3,10 +3,10 @@
 Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 
 - Chacune des commandes à son propre TCL pour éviter le lag.
-- Charger vos TCL sur des eggdrops différent et des serveurs différent.
-  - **connection gbit recommander**
+- Charger vos TCL sur des eggdrops différents et des serveurs différent.
+  - **connexion gbit recommander**
 - Assurez-vous d'avoir une base de données MYSQL rapide et performant.
-  - **disque dur SSD recommander ou NVME pour de meilleur performance**
+  - **disque dur SSD recommander ou NVME pour de meilleures performances**
 -------------------------------------------------------------------------------------------------------
 **Config & FLAGS**
 
