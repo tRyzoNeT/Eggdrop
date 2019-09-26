@@ -9,5 +9,6 @@ Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
   - **disque dur SSD recommander ou NVME pour de meilleur performance**
 -------------------------------------------------------------------------------------------------------
 **Config & Notes**
+
 4 FLAGS a chanset dans votre eggdrop pour que les commandes fonctionne sur les channels désirer.
 - ADD - DB - SEARCH - STATS
