@@ -1,4 +1,4 @@
-# preedb0t.v1.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN #
+# preedb0t.v1.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN
 
 Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 -------------------------------------------------------------------------------------------------------
@@ -15,7 +15,7 @@ iNDEX de nos FLAGS :: **ADD - DB - SEARCH - STATS**
 - SEARCH :: Recherche d'information dans la database.
 - STATS :: Affichage des statistiques depuis la dernière heure. (addpre,delpre,nuke,unnuke...etc)
 -------------------------------------------------------------------------------------------------------
-**CONFiGURATiON FLAGS**
+CONFiGURATiON FLAGS
 -------------------------------------------------------------------------------------------------------
 - Premièrement connecter vous en DCC CHAT avec votre eggdrop
 - Ensuite tapper la commande **.chanset #votre-channel +FLAG**
