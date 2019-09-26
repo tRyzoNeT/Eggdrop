@@ -10,5 +10,12 @@ Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 -------------------------------------------------------------------------------------------------------
 **Config & Notes**
 
-4 FLAGS a chanset dans votre eggdrop pour que les commandes fonctionne sur les channels désirer.
-- ADD - DB - SEARCH - STATS
+Nos FLAGS :: **ADD - DB - SEARCH - STATS**
+- Comment configurer les flags :
+- Premièrement connecter vous en DCC CHAT avec votre eggdrop.
+- Tapper la commande **.chanset #votre-channel +FLAG**
+
+ADD    =
+DB     =
+SEARCH =
+STATS  =
