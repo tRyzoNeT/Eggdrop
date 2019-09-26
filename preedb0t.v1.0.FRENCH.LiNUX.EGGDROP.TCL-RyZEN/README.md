@@ -8,5 +8,5 @@ Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 - Assurez-vous d'avoir une base de données MYSQL rapide et performant.
   - **disque dur SSD recommander ou NVME pour de meilleur performance**
   
-# 4 FLAGS a chanset dans votre eggdrop pour que les commandes fonctionne sur les channels désirer
+4 FLAGS a chanset dans votre eggdrop pour que les commandes fonctionne sur les channels désirer
 - 
