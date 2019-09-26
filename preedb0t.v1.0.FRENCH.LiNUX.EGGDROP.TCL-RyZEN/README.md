@@ -1,6 +1,6 @@
 # preedb0t.v1.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN #
 
-Ce qui est nécessaire au bon fonctionnement :: mysqltcl
+Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 
 - Chacune des commandes à son propre TCL pour éviter le lag.
 - Charger vos TCL sur des eggdrops différent et des serveurs différent.
