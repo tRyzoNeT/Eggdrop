@@ -14,8 +14,4 @@ Nos FLAGS :: **ADD - DB - SEARCH - STATS**
 - Comment configurer les flags :
 - Premièrement connecter vous en DCC CHAT avec votre eggdrop.
 - Tapper la commande **.chanset #votre-channel +FLAG**
-
-ADD    =
-DB     =
-SEARCH =
-STATS  =
+- N'oublier pas de sauvegarder **.save**
