@@ -1,7 +1,7 @@
-# preedb0t.v1.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN
+# preedb0t.v1.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN #
 
 Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
--------------------------------------------------------------------------------------------------------
+
 - Chacune des commandes à son propre TCL pour éviter le lag.
 - Charger vos TCL sur des eggdrops différents et des serveurs différent.
   - **connexion gbit recommander**
@@ -9,14 +9,14 @@ Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
   - **disque dur SSD recommander ou NVME pour de meilleures performances**
 -------------------------------------------------------------------------------------------------------
 iNDEX de nos FLAGS :: **ADD - DB - SEARCH - STATS**
--------------------------------------------------------------------------------------------------------
+
 - ADD :: 
 - DB :: Affiche le nombre de release dans la database.
 - SEARCH :: Recherche d'information dans la database.
 - STATS :: Affichage des statistiques depuis la dernière heure. (addpre,delpre,nuke,unnuke...etc)
 -------------------------------------------------------------------------------------------------------
 CONFiGURATiON FLAGS
--------------------------------------------------------------------------------------------------------
+
 - Premièrement connecter vous en DCC CHAT avec votre eggdrop
 - Ensuite tapper la commande **.chanset #votre-channel +FLAG**
 - Et n'oublier pas de sauvegarder **.save**
