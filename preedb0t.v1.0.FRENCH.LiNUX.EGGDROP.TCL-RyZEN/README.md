@@ -8,8 +8,6 @@ Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 - Assurez-vous d'avoir une base de données MYSQL rapide et performant.
   - **disque dur SSD recommander ou NVME pour de meilleures performances**
 -------------------------------------------------------------------------------------------------------
-**Config & FLAGS**
--------------------------------------------------------------------------------------------------------
 iNDEX de nos FLAGS :: **ADD - DB - SEARCH - STATS**
 -------------------------------------------------------------------------------------------------------
 - ADD :: 
@@ -17,7 +15,8 @@ iNDEX de nos FLAGS :: **ADD - DB - SEARCH - STATS**
 - SEARCH :: Recherche d'information dans la database.
 - STATS :: Affichage des statistiques depuis la dernière heure. (addpre,delpre,nuke,unnuke...etc)
 -------------------------------------------------------------------------------------------------------
-- **CONFiGURATiON FLAGS**
- - Premièrement connecter vous en DCC CHAT avec votre eggdrop.
- - Tapper la commande **.chanset #votre-channel +FLAG**
- - N'oublier pas de sauvegarder **.save**
+**CONFiGURATiON FLAGS**
+-------------------------------------------------------------------------------------------------------
+- Premièrement connecter vous en DCC CHAT avec votre eggdrop
+- Ensuite tapper la commande **.chanset #votre-channel +FLAG**
+- Et n'oublier pas de sauvegarder **.save**
