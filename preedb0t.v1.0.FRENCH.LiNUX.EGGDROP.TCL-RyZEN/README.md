@@ -11,13 +11,14 @@ Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 iNDEX de nos FLAGS :: **ADD - DB - SEARCH - STATS**
 
 - ADD :: Ajouter a la database toute information possible
-- ADD CMD :: **!addpre !addurl !info !readd**
-- ADD CMD :: **!delpre !moddelpre !modnuke !modunnuke !nuke !undelpre !unnuke**
+- CMD :: **!addpre !addurl !info !readd**
+- CMD :: **!delpre !moddelpre !modnuke !modunnuke !nuke !undelpre !unnuke**
 - DB :: Affiche le nombre de release dans la database.
-- DB CMD :: **!db**
+- CMD :: **!db**
 - SEARCH :: Recherche d'information dans la database.
-- SEARCH CMD :: **!dupe !pre**
+- CMD :: **!dupe !pre**
 - STATS :: Affichage des statistiques depuis la dernière heure. (addpre,delpre,nuke,unnuke...etc)
+- CMD :: **!hour**
 -------------------------------------------------------------------------------------------------------
 CONFiGURATiON FLAGS
 
