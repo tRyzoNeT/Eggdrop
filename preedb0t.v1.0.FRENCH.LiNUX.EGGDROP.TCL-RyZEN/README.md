@@ -16,8 +16,8 @@ iNDEX de nos FLAGS :: **ADD - DB - SEARCH - STATS**
 - DB :: Affiche le nombre de release dans la database.
 - SEARCH :: Recherche d'information dans la database.
 - STATS :: Affichage des statistiques depuis la dernière heure. (addpre,delpre,nuke,unnuke...etc)
-  - **CONFiGURATiON**
-  - Comment configurer les flags :
+
+- **CONFiGURATiON FLAGS**
   - Premièrement connecter vous en DCC CHAT avec votre eggdrop.
   - Tapper la commande **.chanset #votre-channel +FLAG**
   - N'oublier pas de sauvegarder **.save**
