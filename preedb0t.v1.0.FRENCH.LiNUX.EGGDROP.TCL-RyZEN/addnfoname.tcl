@@ -34,7 +34,7 @@ proc ms:addnfoname { nick uhost hand chan arg } {
    set mysql_(handle) [mysqlconnect -host $mysql_(host) -user $mysql_(user) -password $mysql_(password) -db $mysql_(db)]                         
    mysqlexec $mysql_(handle) "UPDATE $mysql_(table) SET $db_(nfoname)='$addnfoname_(nnfo)' WHERE $db_(rlsname)='$addnfoname_(release)'"
    mysqlclose $mysql_(handle)
-   #putquick "PRIVMSG $predchan : (ADDnfoname) $addnfoname_(release) - $addnfoname_(lien)"
+   #putquick "PRIVMSG $predchan : (ADDnfoname) $addnfoname_(release) - $addnfoname_(nnfo)"
   }
  }
 }
