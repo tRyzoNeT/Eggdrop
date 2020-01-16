@@ -1,6 +1,6 @@
 SET FOREIGN_KEY_CHECKS=0;
-DROP TABLE IF EXISTS `tryzodb_pre`;
-CREATE TABLE `tryzodb_pre` (
+DROP TABLE IF EXISTS `mysql_database`;
+CREATE TABLE `mysql_database` (
   `id` int(100) NOT NULL AUTO_INCREMENT,
   `rlsname` varchar(255) NOT NULL,
   `grp` varchar(100) NOT NULL,
@@ -75,4 +75,4 @@ CREATE TABLE `tryzodb_pre` (
   `audio_kbps` text,
   `audio_rate` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2945758 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
