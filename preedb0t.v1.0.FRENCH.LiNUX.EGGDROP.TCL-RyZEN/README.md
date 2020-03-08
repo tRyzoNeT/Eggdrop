@@ -13,13 +13,13 @@ iNDEX de nos FLAGS :: **ADD - DB - SEARCH - STATS**
 - FLAG 'ADD' :: Ajouter à la database toute information possible
 - CMD :: **!addnfoname !addpre !addsfvname !addurl !info !readd**
 - CMD :: **!delpre !moddelpre !modnuke !modunnuke !nuke !undelpre !unnuke**
-
+-------------------------------------------------------------------------------------------------------
 - FLAG 'DB' :: Affiche le nombre de release dans la database.
 - CMD :: **!db**
-
+-------------------------------------------------------------------------------------------------------
 - FLAG 'SEARCH' :: Recherche d'informations dans la database.
 - CMD :: **!dupe !pre**
-
+-------------------------------------------------------------------------------------------------------
 - FLAG 'STATS' :: Affichage des statistiques depuis la dernière heure. (addpre,delpre,nuke,unnuke...etc)
 - CMD :: **!hour**
 -------------------------------------------------------------------------------------------------------
