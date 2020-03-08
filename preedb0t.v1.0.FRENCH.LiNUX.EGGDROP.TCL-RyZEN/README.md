@@ -10,18 +10,21 @@ Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 -------------------------------------------------------------------------------------------------------
 iNDEX de nos FLAGS :: **ADD - DB - SEARCH - STATS**
 
-- ADD :: Ajouter à la database toute information possible
+- FLAG 'ADD' :: Ajouter à la database toute information possible
 - CMD :: **!addnfoname !addpre !addsfvname !addurl !info !readd**
 - CMD :: **!delpre !moddelpre !modnuke !modunnuke !nuke !undelpre !unnuke**
-- DB :: Affiche le nombre de release dans la database.
+
+- FLAG 'DB' :: Affiche le nombre de release dans la database.
 - CMD :: **!db**
-- SEARCH :: Recherche d'informations dans la database.
+
+- FLAG 'SEARCH' :: Recherche d'informations dans la database.
 - CMD :: **!dupe !pre**
-- STATS :: Affichage des statistiques depuis la dernière heure. (addpre,delpre,nuke,unnuke...etc)
+
+- FLAG 'STATS' :: Affichage des statistiques depuis la dernière heure. (addpre,delpre,nuke,unnuke...etc)
 - CMD :: **!hour**
 -------------------------------------------------------------------------------------------------------
 CONFiGURATiON FLAGS
 
 - Premièrement connectez-vous en DCC CHAT avec votre eggdrop
-- Ensuite tapper la commande **.chanset #votre-channel +FLAG**
+- Ensuite tapper la commande **.chanset #votre-channel +FLAG** (exemple: .chanset #addpre +ADD)
 - Et n'oubliez pas de sauvegarder **.save**
