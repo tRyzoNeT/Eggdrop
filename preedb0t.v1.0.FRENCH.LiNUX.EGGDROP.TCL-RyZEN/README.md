@@ -3,7 +3,8 @@ PROJET MiGRER VERS LA VERSiON 1.1
 - Une mise a jour importante, Connection au serveur mysql 1 seule fois (KEEPMYSQLOPEN).
 - Sa accélère considérablement les commandes du eggdrop.
 - Le lag est moin vu qu'il a toujours une connection SQL constante.
-**OUBLiER CE TCL
+
+**OUBLiER CE TCL**
 
 # preedb0t.v1.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN #
 
