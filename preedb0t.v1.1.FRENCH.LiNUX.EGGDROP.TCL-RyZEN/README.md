@@ -11,8 +11,8 @@ Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 
 QUOi DE NOUVEAU?!? DANS LA VERSiON 1.1
 
-- TCL garde toujours une connexion 'OUVERTE' au serveur mySQLd. (KEEPMYSQLOPEN).
-- Sa accélère considérablement TOUT les commandes du eggdrop.
-- Le lag est moin vu qu'il a toujours une connection 'OUVERTE' au serveur mySQLd.
+- TCL garde toujours une connexion 'OUVERTE' au serveur mySQLd (KEEPMYSQLOPEN).
+- Sa accélère considérablement TOUTE les commandes du eggdrop.
+- Le LAG est beaucoup moin vu qu'il y a toujours une connection 'OUVERTE' au serveur mySQLd.
 
   -------------------------------------------------------------------------------------------------------
