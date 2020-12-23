@@ -9,8 +9,7 @@ Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
   - **disque dur SSD recommander ou NVME pour de meilleures performances**
   -------------------------------------------------------------------------------------------------------
 
-VERSiON 1.0 ?! : J'ai personnelement arrêter de coder cette version, il y a trop de LAG. Une connexion
-                 au serveur mySQLd sur chaque commande... Régler avec la version 1.1 XD
+VERSiON 1.0 ?! : J'ai personnelement arrêter de coder cette version, il y a trop de LAG. Une connexion au serveur mySQLd sur chaque commande... Régler avec la version 1.1 XD
 
 QUOi DE NOUVEAU?!? DANS LA VERSiON 1.1 :
 
