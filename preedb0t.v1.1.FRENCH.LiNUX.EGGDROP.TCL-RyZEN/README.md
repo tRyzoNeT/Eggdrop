@@ -1,4 +1,4 @@
-# preedb0t.v1.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN #
+# preedb0t.v1.1.FRENCH.LiNUX.EGGDROP.TCL-RyZEN #
 
 Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 
