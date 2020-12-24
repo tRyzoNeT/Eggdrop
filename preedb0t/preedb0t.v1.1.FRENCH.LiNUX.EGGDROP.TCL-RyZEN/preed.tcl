@@ -77,6 +77,7 @@ setudef flag db
 setudef flag add
 setudef flag stats
 ################################################################################
+set addchan "#CHANADD"
 set predchan "#CHANPRED"
 set nudchan "#CHANNUKE"
 ################################################################################
