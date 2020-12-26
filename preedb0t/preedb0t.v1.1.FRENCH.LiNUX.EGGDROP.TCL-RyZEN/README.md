@@ -8,6 +8,7 @@ Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 - Une connexion gbit est recommander.
 - Assurez-vous d'avoir une base de données MYSQL rapide et performant.
 - Disque dur SSD recommander ou NVME pour de meilleures performances.
+
   -------------------------------------------------------------------------------------------------------
 
 QUOi DE NOUVEAU?!? DANS LA VERSiON 1.1
