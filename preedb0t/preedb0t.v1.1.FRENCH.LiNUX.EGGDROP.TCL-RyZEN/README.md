@@ -7,7 +7,7 @@ Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 - Charger vos TCL sur des eggdrops différents et des serveurs différent.
 - Une connexion gbit est recommander.
 - Assurez-vous d'avoir une base de données MYSQL rapide et performant.
-- **Disque dur SSD recommander ou NVME pour de meilleures performances.
+- **Disque dur SSD recommander ou NVME pour de meilleures performances.**
 
   -------------------------------------------------------------------------------------------------------
 
