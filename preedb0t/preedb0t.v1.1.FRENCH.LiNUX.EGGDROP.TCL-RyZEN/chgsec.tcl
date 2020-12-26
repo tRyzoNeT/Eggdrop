@@ -3,7 +3,7 @@ proc ms:chgsection { nick uhost hand chan arg } {
  set chan [string tolower $chan]
  if {[channel get $chan add]} {
   if { $arg == "" } {
-   putquick "privmsg $chan : (chgSEC-syntax) !chgsec <nom.de.la.release> <nouvelle-section>"
+   putquick "privmsg $chan : \002\0033(\00314CHGSEC\0033)\002\0037 Syntax * !chgsec <nom.de.la.release> <nouvelle-section>"
   } else {
    set splitz [split $arg " "]
    set chgsec_(release) [lrange $splitz 0 0]
@@ -12,8 +12,8 @@ proc ms:chgsection { nick uhost hand chan arg } {
    set chgsec_(nsection) [lrange $splitz 1 1]
    set chgsec_(nsection) [string trimleft $chgsec_(nsection) "\{"]
    set chgsec_(nsection) [string trimright $chgsec_(nsection) "\}"]
-   if { $chgsec_(release) == "" } { putquick "PRIVMSG $chan : (chgsec-erreur) nom de la RELEASE MANQUANT" } else { }
-   if { $chgsec_(nsection) == "" } { putquick "PRIVMSG $chan : (chgsec-erreur) NOUVELLE section MANQUANTE" } else { }
+   if { $chgsec_(release) == "" } { putquick "privmsg $chan : \002\0033(\00314CHGSEC\0033)\002\0037 Erreur * Nom de la RELEASE MANQUANT" } else { }
+   if { $chgsec_(nsection) == "" } { putquick "privmsg $chan : \002\0033(\00314CHGSEC\0033)\002\0037 Erreur * NOUVELLE section MANQUANTE" } else { }
   }
  }
  set chan [string tolower $chan]                                       
@@ -30,7 +30,7 @@ proc ms:chgsection { nick uhost hand chan arg } {
   set numrel [mysqlsel $mysql_(handle) $q]
   if { $numrel == 0 } { } else {                       
    mysqlexec $mysql_(handle) "UPDATE $mysql_(table) SET $db_(section)='$chgsec_(nsection)' WHERE $db_(rlsname)='$chgsec_(release)'"
-   #putquick "PRIVMSG $predchan : (iNFO) $info_(release) - $info_(section)"
+   #putquick "privmsg $predchan : (iNFO) $info_(release) - $info_(section)"
   }
  }
 }
