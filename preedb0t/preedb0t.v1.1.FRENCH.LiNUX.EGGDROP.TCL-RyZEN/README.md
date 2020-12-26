@@ -5,7 +5,7 @@ Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 
 - Chacune des commandes à son propre TCL pour éviter le lag.
 - Charger vos TCL sur des eggdrops différents et des serveurs différent.
-- Une connexion gbit est recommander.
+- **Une connexion gbit est recommander.**
 - Assurez-vous d'avoir une base de données MYSQL rapide et performant.
 - **Disque dur SSD recommander ou NVME pour de meilleures performances.**
 
@@ -24,15 +24,19 @@ iNDEX de nos FLAGS :: **ADD - DB - SEARCH - STATS**
 - FLAG 'ADD' :: Ajouter à la database toute information possible
 - CMD :: **!addnfoname !addpre !addsfvname !addurl !info !readd**
 - CMD :: **!delpre !moddelpre !modnuke !modunnuke !nuke !undelpre !unnuke**
+
   -------------------------------------------------------------------------------------------------------
 - FLAG 'DB' :: Affiche le nombre de release dans la database.
 - CMD :: **!db**
+
   -------------------------------------------------------------------------------------------------------
 - FLAG 'SEARCH' :: Recherche d'informations dans la database.
 - CMD :: **!dupe !pre**
+
 -------------------------------------------------------------------------------------------------------
 - FLAG 'STATS' :: Affichage des statistiques depuis la dernière heure. (addpre,delpre,nuke,unnuke...etc)
 - CMD :: **!hour**
+
   -------------------------------------------------------------------------------------------------------
   
 CONFiGURATiON DES FLAGS ::
