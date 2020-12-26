@@ -1,3 +1,6 @@
+# TCL complet a 80% #
+  -------------------------------------------------------------------------------------------------------
+  
 # preedb0t.v1.1.FRENCH.LiNUX.EGGDROP.TCL-RyZEN #
 
 Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
