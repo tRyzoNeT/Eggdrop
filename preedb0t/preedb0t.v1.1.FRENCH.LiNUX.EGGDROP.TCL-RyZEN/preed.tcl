@@ -77,9 +77,9 @@ setudef flag db
 setudef flag add
 setudef flag stats
 ################################################################################
-set addchan "#CHANADD"
-set predchan "#CHANPRED"
-set nudchan "#CHANNUKE"
+set chan_(add) "#chanADD"
+set chan_(pred) "#chanPRED"
+set chan_(nuke) "#chanNUKE"
 ################################################################################
 load /X/libmysqltcl3.052.so
 putlog "PREEDb0t v1.1 coder par OG (2020) chargé."
