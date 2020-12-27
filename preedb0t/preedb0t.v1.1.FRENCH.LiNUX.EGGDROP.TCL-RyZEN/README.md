@@ -22,7 +22,8 @@ QUOi DE NOUVEAU?!? DANS LA VERSiON 1.1
 iNDEX de nos FLAGS :: **ADD - DB - SEARCH - STATS**
 
 - FLAG 'ADD' :: Ajouter à la database toute information possible
-- CMD :: **!addnfoname !addpre !addsfvname !addurl !info !readd**
+- CMD :: **!addnfoname !addpre !addsfvname !addurl !genre & (!gn) !info !readd**
+- CMD :: **!chgsec**
 - CMD :: **!delpre !moddelpre !modnuke !modunnuke !nuke !undelpre !unnuke**
 
   -------------------------------------------------------------------------------------------------------
