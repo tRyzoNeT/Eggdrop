@@ -5,7 +5,7 @@ proc ms:dbconnect { nick uhost hand chan arg } {
   global mysql_
   set mysql_(handle) [mysqlconnect -host $mysql_(host) -user $mysql_(user) -password $mysql_(password) -db $mysql_(db)]
   keepmysqlopen $mysql_(handle)
-  putquick "privmsg $chan : \002\0033(\00314mySQLd\0033)\002\0037 Connexion au serveur mysqld avec success et KEEPMYSQLOPEN activer."
+  putquick "privmsg $chan \002\0033(\00314mySQLd\0033)\002\0037 Connexion au serveur mysqld avec success et KEEPMYSQLOPEN activer."
  }
 }
 
