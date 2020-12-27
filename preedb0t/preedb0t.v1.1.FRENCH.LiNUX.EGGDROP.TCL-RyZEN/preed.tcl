@@ -1,5 +1,5 @@
 ################################################################################
-# PREEDb0t v1.1 coded & modded by OG (2020)                                    #
+# PREEDb0t v1.1 coder par OG (2020)                                            #
 ################################################################################
 set mysql_(user) "mysqld_user"
 set mysql_(password) "mysqld_pass"
@@ -82,5 +82,5 @@ set predchan "#CHANPRED"
 set nudchan "#CHANNUKE"
 ################################################################################
 load /X/libmysqltcl3.052.so
-putlog "PREEDb0t v1.1 coded & modded by OG (2020) loaded."
+putlog "PREEDb0t v1.1 coder par OG (2020) chargé."
 ############################### END OF SCRIPT ##################################
