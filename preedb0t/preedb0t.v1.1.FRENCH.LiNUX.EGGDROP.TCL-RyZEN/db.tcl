@@ -6,7 +6,9 @@ proc ms:mdb {nick uhost hand chan arg} {
   set row [lindex [mysqlsel $handle "SHOW TABLE STATUS LIKE '$mysql_(table)';" -list] 0]
   set q "SELECT COUNT(id) as nbrls from $mysql_(table)"
   set numrel [mysqlsel $handle $q]
-  mysqlmap $handle { nbrls } { putquick "privmsg $chan : \002\0033(\0030DATABASE\0033)\002\003 mysql\0034 $nbrls \003releases dans PreDB \0039-\003 Utilise\0034 [format %.2f [expr [lindex $row 5] / 1024.0]] \003KB" }
+  mysqlmap $handle { nbrls } { 
+   putquick "privmsg $chan : \002\0033(\0030DATABASE\0033)\002\003 mysql\0034 $nbrls \003releases dans PreDB \0039-\003 Utilise\0034 [format %.2f [expr [lindex $row 5] / 1024.0]] \003KB"
+   mysqlclose $handle
+  }
  } else { }
- mysqlclose $handle
 }
