@@ -5,6 +5,8 @@
 
 **Je ferais que des ajouts de tcl... soyez a l'affut sur github**
 
+-------------------------------------------------------------------------------------------------------
+
 Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
 
 - Chacune des commandes à son propre TCL pour éviter le lag.
