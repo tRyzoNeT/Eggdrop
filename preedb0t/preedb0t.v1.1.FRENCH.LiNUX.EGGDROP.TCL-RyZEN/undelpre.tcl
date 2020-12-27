@@ -3,7 +3,7 @@ proc ms:undelpre { nick uhost hand chan arg } {
  set chan [string tolower $chan]
  if {[channel get $chan add]} {
   if { $arg == "" } {
-   putquick "privmsg $chan :  \002\0033(\00314UNDELPRE\0033)\002\0037 Syntax * !undelpre <nom.de.la.release> <undelpre.raison> <undelpre.net>"
+   putquick "privmsg $chan \002\0033(\00314UNDELPRE\0033)\002\0037 Syntax * !undelpre <nom.de.la.release> <undelpre.raison> <undelpre.net>"
   } else {
    set splitz [split $arg " "]
    set undelpre_(release) [lrange $splitz 0 0]
@@ -15,14 +15,14 @@ proc ms:undelpre { nick uhost hand chan arg } {
    set undelpre_(udnet) [lrange $splitz 2 2]
    set undelpre_(udnet) [string trimleft $undelpre_(udnet) "\{"]
    set undelpre_(udnet) [string trimright $undelpre_(udnet) "\}"]
-   if { $undelpre_(release) == "" } { putquick "privmsg $chan : \002\0033(\00314UNDELPRE\0033)\002\0037 Erreur * NOM de la RELEASE MANQUANT" } else { }
-   if { $undelpre_(udraison) == "" } { putquick "privmsg $chan : \002\0033(\00314UNDELPRE\0033)\002\0037 Erreur * RAiSON du delpre MANQUANT" } else { }
-   if { $undelpre_(udnet) == "" } { putquick "privmsg $chan : \002\0033(\00314UNDELPRE\0033)\002\0037 Erreur * NUKENET du delpre MANQUANT" } else { }
+   if { $undelpre_(release) == "" } { putquick "privmsg $chan \002\0033(\00314UNDELPRE\0033)\002\0037 Erreur * NOM de la RELEASE MANQUANT" } else { }
+   if { $undelpre_(udraison) == "" } { putquick "privmsg $chan \002\0033(\00314UNDELPRE\0033)\002\0037 Erreur * RAiSON du delpre MANQUANT" } else { }
+   if { $undelpre_(udnet) == "" } { putquick "privmsg $chan \002\0033(\00314UNDELPRE\0033)\002\0037 Erreur * NUKENET du delpre MANQUANT" } else { }
   }
  }
  set chan [string tolower $chan]                                       
  if {[channel get $chan add]} {
-  global mysql_ db_
+  global mysql_ db_ chan_
   set splitz [split $arg " "]
   set undelpre_(release) [lrange $splitz 0 0]
   set undelpre_(release) [string trimleft $undelpre_(release) "\\\{"]
@@ -38,7 +38,7 @@ proc ms:undelpre { nick uhost hand chan arg } {
   set numrel [mysqlsel $mysql_(handle) $q]
   if { $numrel == 0 } { } else {                       
    mysqlexec $mysql_(handle) "UPDATE $mysql_(table) SET $db_(delpre)='0', $db_(moddelpre)='0', $db_(modnuke)='0', $db_(modunnuke)='0', $db_(nuke)='0', $db_(unnuke)='0', $db_(undelpre)='1', $db_(undelpre_ctime)='$undelpre_(udctime)', $db_(undelpre_reason)='$undelpre_(udraison)', $db_(undelpre_net)='$undelpre_(udnet)' WHERE $db_(rlsname)='$undelpre_(release)'"
-   #putquick "privmsg $predchan : (UNDELPRE) $undelpre_(release) - $undelpre_(udraison) / $undelpre_(udnet)"
+   #putquick "privmsg $chan_(pred) (UNDELPRE) $undelpre_(release) - $undelpre_(udraison) / $undelpre_(udnet)"
   }
  }
 }
