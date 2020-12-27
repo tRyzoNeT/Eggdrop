@@ -1,6 +1,8 @@
 # Preedb0t.v1.1.FRENCH.LiNUX.EGGDROP.TCL-RyZEN
 **TCL complet a 87%** (il manque **dupe.tcl** / **hour.tcl** et **pre.tcl**)
+
 **Une fois ce tcl completer a 100%, il n'aura plus question de modification sauf s'il a des bugs**
+
 **Je ferais que des ajouts de tcl... soyez a l'affut sur github**
 
 Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl
