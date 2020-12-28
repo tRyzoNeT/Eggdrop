@@ -1,3 +1,6 @@
+################################################################################
+#  Ce fichier sera mise a jour au fur et a mesure qu'il y a des nouveaux TCL   #
+################################################################################
 bind pub -|- !cmd ms:cmdlist
 proc ms:cmdlist { nick uhost hand chan arg } {
  set chan [string tolower $chan]
