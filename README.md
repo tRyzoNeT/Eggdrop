@@ -4,4 +4,4 @@
 
 - ...preedb0t FRENCH LiNUX EGGDROP TCL pRojet!!
 
-- Simple Auto Auth ANOPE v1. TCL simple, pratique et efficace!!!
+- Simple AUTH Atheme & Anope v1... TCL simple, pratique et efficace!!!
