@@ -6,6 +6,7 @@ set mysql_(password) "mysqld_pass"
 set mysql_(host) "mysqld.ip"
 set mysql_(db) "mysqld_database"
 set mysql_(table) "mysqld_table"
+set mysql_(tp2p) "mysqld_table_p2p"
 ################################################################################
 set db_(id) "id"
 set db_(rlsname) "rlsname"
@@ -78,6 +79,7 @@ setudef flag add
 setudef flag stats
 ################################################################################
 set chan_(add) "#chanADD"
+set chan_(p2p) "#chanP2P"
 set chan_(pred) "#chanPRED"
 set chan_(nuke) "#chanNUKE"
 ################################################################################
