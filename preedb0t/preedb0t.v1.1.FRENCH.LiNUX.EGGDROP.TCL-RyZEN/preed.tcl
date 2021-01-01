@@ -78,6 +78,7 @@ setudef flag search
 setudef flag db
 setudef flag add
 setudef flag stats
+setudef flag p2p
 ################################################################################
 set chan_(add) "#chanADD"
 set chan_(p2p) "#chanP2P"
