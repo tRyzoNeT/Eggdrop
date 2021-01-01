@@ -38,7 +38,7 @@ proc ms:modnuke { nick uhost hand chan arg } {
   set numrel [mysqlsel $mysql_(handle) $q]
   if { $numrel == 0 } { } else {                        
    mysqlexec $mysql_(handle) "UPDATE $mysql_(table) SET $db_(delpre)='0', $db_(moddelpre)='0', $db_(nuke)='0', $db_(modunnuke)='0', $db_(unnuke)='0', $db_(undelpre)='0', $db_(modnuke)='1', $db_(modnuke_ctime)='$modnuke_(mnctime)', $db_(modnuke_reason)='$modnuke_(mnraison)', $db_(modnuke_net)='$modnuke_(mnnet)' WHERE $db_(rlsname)='$modnuke_(release)'"
-   #putquick "privmsg $chan_(pred) (MODNUKE) $modnuke_(release) - $modnuke_(mnraison) / $modnuke_(mnnet)"
+   #putquick "privmsg $chan_(nuke) (MODNUKE) $modnuke_(release) - $modnuke_(mnraison) / $modnuke_(mnnet)"
   }
  }
 }
