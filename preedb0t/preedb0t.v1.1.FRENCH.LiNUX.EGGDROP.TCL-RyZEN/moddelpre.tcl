@@ -38,7 +38,7 @@ proc ms:moddelpre { nick uhost hand chan arg } {
   set numrel [mysqlsel $mysql_(handle) $q]
   if { $numrel == 0 } { } else {                       
    mysqlexec $mysql_(handle) "UPDATE $mysql_(table) SET $db_(delpre)='0', $db_(modnuke)='0', $db_(nuke)='0', $db_(modunnuke)='0', $db_(unnuke)='0', $db_(undelpre)='0', $db_(moddelpre)='1', $db_(moddelpre_ctime)='$moddelpre_(mdctime)', $db_(moddelpre_reason)='$moddelpre_(mdraison)', $db_(moddelpre_net)='$moddelpre_(mdnet)' WHERE $db_(rlsname)='$moddelpre_(release)'"
-   #putquick "privmsg $chan_(pred) (MODDELPRE) $moddelpre_(release) - $moddelpre_(mdraison) / $moddelpre_(mdnet)"
+   #putquick "privmsg $chan_(nuke) (MODDELPRE) $moddelpre_(release) - $moddelpre_(mdraison) / $moddelpre_(mdnet)"
   }
  }
 }
