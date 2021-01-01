@@ -38,7 +38,7 @@ proc ms:unnuke { nick uhost hand chan arg } {
   set numrel [mysqlsel $mysql_(handle) $q]
   if { $numrel == 0 } { } else {                        
    mysqlexec $mysql_(handle) "UPDATE $mysql_(table) SET $db_(delpre)='0', $db_(moddelpre)='0', $db_(modnuke)='0', $db_(modunnuke)='0', $db_(nuke)='0', $db_(undelpre)='0', $db_(unnuke)='1', $db_(unnuke_ctime)='$unnuke_(unctime)', $db_(unnuke_reason)='$unnuke_(unraison)', $db_(unnuke_net)='$unnuke_(unnet)' WHERE $db_(rlsname)='$unnuke_(release)'"
-   #putquick "privmsg $chan_(pred) (UNNUKE) $unnuke_(release) - $unnuke_(unraison) / $unnuke_(unnet)"
+   #putquick "privmsg $chan_(nuke) (UNNUKE) $unnuke_(release) - $unnuke_(unraison) / $unnuke_(unnet)"
   }
  }
 }
