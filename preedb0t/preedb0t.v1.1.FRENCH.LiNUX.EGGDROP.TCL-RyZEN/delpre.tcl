@@ -38,7 +38,7 @@ proc ms:delpre { nick uhost hand chan arg } {
   set numrel [mysqlsel $mysql_(handle) $mysql_(select)]
   if { $numrel == 0 } { } else {                        
    mysqlexec $mysql_(handle) "UPDATE $mysql_(table) SET $db_(nuke)='0', $db_(moddelpre)='0', $db_(modnuke)='0', $db_(modunnuke)='0', $db_(unnuke)='0', $db_(undelpre)='0', $db_(delpre)='1', $db_(delpre_ctime)='$delpre_(dctime)', $db_(delpre_reason)='$delpre_(draison)', $db_(delpre_net)='$delpre_(dnnet)' WHERE $db_(rlsname)='$delpre_(release)'"
-   #putquick "privmsg $chan_(pred) (DELPRE) $delpre_(release) - $delpre_(draison) / $delpre_(dnet)"
+   #putquick "privmsg $chan_(nuke) (DELPRE) $delpre_(release) - $delpre_(draison) / $delpre_(dnet)"
   }
  }
 }
