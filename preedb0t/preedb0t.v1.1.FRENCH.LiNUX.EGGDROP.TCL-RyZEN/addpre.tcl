@@ -22,7 +22,7 @@ proc ms:addpre { nick uhost hand chan arg } {
  }
  set chan [string tolower $chan]                                       
  if {[channel get $chan add]} {
-  global prefix_ mysql_ db_ chan_
+  global network prefix_ mysql_ db_ chan_
   set splitz [split $arg " "]
   set addpre_(release) [lrange $splitz 0 0]
   set addpre_(release) [string trimleft $addpre_(release) "\\\{"]
@@ -40,8 +40,8 @@ proc ms:addpre { nick uhost hand chan arg } {
    set group [lindex $temp1 end]
    if { $numrel == 0 } {
     set addpre_(time) [clock seconds]
-    set nix [mysqlexec $mysql_(handle) "INSERT INTO $mysql_(table) ($db_(rlsname),$db_(grp),$db_(section),$db_(ctime),$db_(rls_addpre),$db_(rls_addpre_nick),$db_(rls_addpre_chan),$db_(rls_addpre_network),$db_(rls_addpre_source),$db_(rls_addold),$db_(rls_readd),$db_(rls_sitepre)) VALUES ( '$addpre_(release)' , '$group' , '$addpre_(section)' , '$addpre_(time)' , '1' , '$nick' , '$chan' , 'QCzone' , '$addpre_(source)' , '0' , '0' , '0' )"]
-    #putquick "privmsg $chan_(add) (ADDPRE) $addpre_(release) - $addpre_(section)"
+    set nix [mysqlexec $mysql_(handle) "INSERT INTO $mysql_(table) ($db_(rlsname),$db_(grp),$db_(section),$db_(ctime),$db_(rls_addpre),$db_(rls_addpre_nick),$db_(rls_addpre_chan),$db_(rls_addpre_network),$db_(rls_addpre_source),$db_(rls_addold),$db_(rls_readd),$db_(rls_sitepre)) VALUES ( '$addpre_(release)' , '$group' , '$addpre_(section)' , '$addpre_(time)' , '1' , '$nick' , '$chan' , '$network' , '$addpre_(source)' , '0' , '0' , '0' )"]
+    #putquick "privmsg $chan_(pred) (ADDPRE) $addpre_(release) - $addpre_(section)"
    }
   }
  }
