@@ -38,7 +38,7 @@ proc ms:undelpre { nick uhost hand chan arg } {
   set numrel [mysqlsel $mysql_(handle) $q]
   if { $numrel == 0 } { } else {                       
    mysqlexec $mysql_(handle) "UPDATE $mysql_(table) SET $db_(delpre)='0', $db_(moddelpre)='0', $db_(modnuke)='0', $db_(modunnuke)='0', $db_(nuke)='0', $db_(unnuke)='0', $db_(undelpre)='1', $db_(undelpre_ctime)='$undelpre_(udctime)', $db_(undelpre_reason)='$undelpre_(udraison)', $db_(undelpre_net)='$undelpre_(udnet)' WHERE $db_(rlsname)='$undelpre_(release)'"
-   #putquick "privmsg $chan_(pred) (UNDELPRE) $undelpre_(release) - $undelpre_(udraison) / $undelpre_(udnet)"
+   #putquick "privmsg $chan_(nuke) (UNDELPRE) $undelpre_(release) - $undelpre_(udraison) / $undelpre_(udnet)"
   }
  }
 }
