@@ -6,7 +6,6 @@ set mysql_(password) "mysqld_pass"
 set mysql_(host) "mysqld.ip"
 set mysql_(db) "mysqld_database"
 set mysql_(table) "mysqld_table"
-set mysql_(tp2p) "mysqld_table_p2p"
 ################################################################################
 set db_(id) "id"
 set db_(rlsname) "rlsname"
@@ -24,7 +23,6 @@ set db_(nfoname) "nfoname"
 set db_(nfosize) "nfosize"
 set db_(sfvname) "sfvname"
 set db_(sfvsize) "sfvsize"
-set db_(trackers) "trackers"
 set db_(nuke) "nuke"
 set db_(nuke_ctime) "nuke_ctime"
 set db_(nuke_reason) "nuke_reason"
@@ -78,10 +76,8 @@ setudef flag search
 setudef flag db
 setudef flag add
 setudef flag stats
-setudef flag p2p
 ################################################################################
 set chan_(add) "#chanADD"
-set chan_(p2p) "#chanP2P"
 set chan_(pred) "#chanPRED"
 set chan_(nuke) "#chanNUKE"
 ################################################################################
