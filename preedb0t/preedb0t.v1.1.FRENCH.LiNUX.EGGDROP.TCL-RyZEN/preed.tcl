@@ -80,6 +80,7 @@ setudef flag stats
 set chan_(add) "#chanADD"
 set chan_(pred) "#chanPRED"
 set chan_(nuke) "#chanNUKE"
+set chan_(stats) "#chanADD"
 ################################################################################
 load /X/libmysqltcl3.052.so
 putlog "PREEDb0t v1.1 coder par OG (2020) chargé."
