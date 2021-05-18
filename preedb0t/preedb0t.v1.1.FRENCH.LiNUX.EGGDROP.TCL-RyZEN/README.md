@@ -1,6 +1,6 @@
 # Preedb0t.v1.1.FRENCH.LiNUX.EGGDROP.TCL-RyZEN
 
-**TCL complet a 95%** (il manque **dupe.tcl**)
+**TCL complet a 90%** (il manque **dupe.tcl** et **pre.tcl**)
 
 **Une fois ce TCL complété à 100%, il n'aura plus question de modification sauf s'il a des bugs**
 
