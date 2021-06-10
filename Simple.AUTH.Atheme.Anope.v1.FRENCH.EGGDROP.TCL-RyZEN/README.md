@@ -4,3 +4,4 @@ Concu pour les iRC SERViCES, ATHEME & ANOPE TCL crée par og (eggdrop version 1.
 
 S'iDENTiFY automatiquement au nickserv / S'iNViTE seul sur les channels autorisé par chanserv / et bien plus...
 
+*** https://cjoint.net/?xt4p8kg2qwyp3xqcitp0 ***
