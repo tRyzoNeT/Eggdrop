@@ -27,7 +27,7 @@ proc ms:nuke { nick uhost hand chan arg } {
  }
  global network prefix_ mysql_ db_ chan_
  set group [lindex [split ${nuke_(release)} -] end]
- set SQL_INSERT "UPDATE IGNORE $mysql_(table) SET "
+ set SQL_INSERT "UPDATE $mysql_(table) SET "
  append SQL_INSERT          "$db_(delpre)='0', $db_(moddelpre)='0', $db_(modnuke)='0', $db_(modunnuke)='0', $db_(unnuke)='0', $db_(undelpre)='0', "
  append SQL_INSERT          "$db_(nuke)='1', $db_(nuke_ctime)='$nuke_(time)', $db_(nuke_reason)='$nuke_(raison)', $db_(nuke_net)='$nuke_(net)' "
  append SQL_INSERT       "WHERE $db_(rlsname)='$nuke_(release)'"
