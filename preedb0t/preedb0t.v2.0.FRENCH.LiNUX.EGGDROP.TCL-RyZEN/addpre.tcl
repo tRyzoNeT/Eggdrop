@@ -41,7 +41,7 @@ proc ms:addpre { nick uhost hand chan arg } {
  putlog "L'exécution de la requête a retourné: ${SQL_RESULTAT} pour ${addpre_(release)}"
  if { [::mysql::insertid ${mysql_(handle)}] != "" } {
   putlog "La release ${addpre_(release)} à été ajouter par ${chan}/${nick} (ID: [::mysql::insertid ${mysql_(handle)}])";
-  #putquick "privmsg ${chan_(pred)} \002\0033(\00314PRE\0033)\002\0037 (${addpre_(section)})\0030 ${addpre_(release)}"
+  putquick "privmsg ${chan_(pred)} \002\0033(\00314PRE\0033)\002\0037 (${addpre_(section)})\0030 ${addpre_(release)}"
  }
  return -1
 }
