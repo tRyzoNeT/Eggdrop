@@ -33,8 +33,8 @@ proc ms:nuke { nick uhost hand chan arg } {
  append SQL_INSERT       "WHERE $db_(rlsname)='$nuke_(release)'"
  set SQL_RESULTAT [::mysql::exec ${mysql_(handle)} ${SQL_INSERT}];
  putlog "L'exécution de la requête a retourné: ${SQL_RESULTAT} pour ${nuke_(release)}"
- if { [::mysql::insertid ${mysql_(handle)}] != "" } {
-  putlog "La release \002${nuke_(release)}\002 à été NUKE par ${chan}/${nick} (ID: [::mysql::insertid ${mysql_(handle)}])";
+ if { [::mysql::`insertid` ${mysql_(handle)}] != "" } {
+  putlog "La release \002${nuke_(release)}\002 à été NUKE par ${chan}/${nick} (ID: [::mysql::`insertid` ${mysql_(handle)}])";
   putquick "privmsg ${chan_(nuke)} \002\0033(\0034NUKE\0033)\002\0037 (${nuke_(raison)} - ${nuke_(net)})\0030 ${nuke_(release)}"
  }
  return -1
