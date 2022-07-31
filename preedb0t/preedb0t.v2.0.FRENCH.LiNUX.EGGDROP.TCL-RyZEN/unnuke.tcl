@@ -27,7 +27,7 @@ proc ms:unnuke { nick uhost hand chan arg } {
  }
  global network prefix_ mysql_ db_ chan_
  set group [lindex [split ${unnuke_(release)} -] end]
- set SQL_INSERT "UPDATE IGNORE $mysql_(table) SET "
+ set SQL_INSERT "UPDATE $mysql_(table) SET "
  append SQL_INSERT          "$db_(delpre)='0', $db_(moddelpre)='0', $db_(modnuke)='0', $db_(modunnuke)='0', $db_(nuke)='0', $db_(undelpre)='0', "
  append SQL_INSERT          "$db_(unnuke)='1', $db_(unnuke_ctime)='$unnuke_(time)', $db_(unnuke_reason)='$unnuke_(raison)', $db_(unnuke_net)='$unnuke_(net)' "
  append SQL_INSERT       "WHERE $db_(rlsname)='$unnuke_(release)'"
