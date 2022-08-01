@@ -1,4 +1,4 @@
-** EN TEST soyez à l'affut XD**
+** EN TEST soyez à l'affut XD **
 
 # preedb0t.v2.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN
 
