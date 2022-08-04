@@ -1,3 +1,4 @@
+if { [catch { package require PREEDb0t 2.0 }] } { die "\[preed.tcl - erreur\] le fichier preed.tcl doit être charger en premier dans votre fichier eggdrop.conf" ; return }
 bind pub -|- !db_con ms:dbconnect
 proc ms:dbconnect { nick uhost hand chan arg } {
     set chan [string tolower $chan]

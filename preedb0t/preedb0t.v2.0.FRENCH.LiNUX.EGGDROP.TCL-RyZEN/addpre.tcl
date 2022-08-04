@@ -1,5 +1,6 @@
-bind pub -|- !addpre ms:addpre
-proc ms:addpre { nick uhost hand chan arg } {
+if { [catch { package require PREEDb0t 2.0 }] } { die "\[preed.tcl - erreur\] le fichier preed.tcl doit être charger en premier dans votre fichier eggdrop.conf" ; return }
+bind pub -|- !addpre ::PREEDb0t::addpre
+proc ::PREEDb0t::addpre { nick uhost hand chan arg } {
     set addpre_(time)       [clock seconds]
     set chan                [string tolower $chan]
     if { ![channel get ${chan} p2add] } {
@@ -27,21 +28,21 @@ proc ms:addpre { nick uhost hand chan arg } {
     }
     global network prefix_ mysql_ db_ chan_
     set group               [lindex [split ${addpre_(release)} -] end]
-    set SQL_INSERT          "INSERT IGNORE INTO $mysql_(table) ( "
-    append SQL_INSERT          "`${db_(rlsname)}`, `${db_(grp)}`, `${db_(section)}`, "
-    append SQL_INSERT          "`${db_(ctime)}`, `${db_(rls_addpre)}`, `${db_(rls_addpre_nick)}`, "
-    append SQL_INSERT          "`${db_(rls_addpre_chan)}`, `${db_(rls_addpre_network)}`, `${db_(rls_addpre_source)}` "
+    set SQL_INSERT          "INSERT IGNORE INTO ${::PREEDb0t::mysql_(table)} ( "
+    append SQL_INSERT          "`${::PREEDb0t::db_(rlsname)}`, `${::PREEDb0t::db_(grp)}`, `${::PREEDb0t::db_(section)}`, "
+    append SQL_INSERT          "`${::PREEDb0t::db_(ctime)}`, `${::PREEDb0t::db_(rls_addpre)}`, `${::PREEDb0t::db_(rls_addpre_nick)}`, "
+    append SQL_INSERT          "`${::PREEDb0t::db_(rls_addpre_chan)}`, `${::PREEDb0t::db_(rls_addpre_network)}`, `${::PREEDb0t::db_(rls_addpre_source)}` "
     append SQL_INSERT       ") VALUES ( "
     append SQL_INSERT           "'${addpre_(release)}', '${group}', '${addpre_(section)}', "
     append SQL_INSERT           "'${addpre_(time)}', '1', '${nick}', "
-    append SQL_INSERT           "'${chan}', '${network}', '${addpre_(source)}' "
+    append SQL_INSERT           "'${chan}', '${::network}', '${addpre_(source)}' "
     append SQL_INSERT       ");"
 
     set SQL_RESULTAT [::mysql::exec ${mysql_(handle)} ${SQL_INSERT}];
     putlog "L'exécution de la requête a retourné: ${SQL_RESULTAT} pour ${addpre_(release)}"
     if { [::mysql::insertid ${mysql_(handle)}] != "" } {
         putlog "La release ${addpre_(release)} à été ajouter par ${chan}/${nick} (ID: [::mysql::insertid ${mysql_(handle)}])";
-        putquick "privmsg ${chan_(pred)} \002\0033(\00314PRE\0033)\002\0037 (${addpre_(section)})\0030 ${addpre_(release)}"
+        putquick "privmsg ${::PREEDb0t::chan_(pred)} \002\0033(\00314PRE\0033)\002\0037 (${addpre_(section)})\0030 ${addpre_(release)}"
     }
     return -1
 }
