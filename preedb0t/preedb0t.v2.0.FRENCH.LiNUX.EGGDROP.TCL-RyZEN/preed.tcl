@@ -1,7 +1,7 @@
 #####################################################################################
 #                 PREEDb0t v2.0 par OG (2022) projet via tRyzoNeT                   #
 #####################################################################################
-#  Remerciement à ZarTek de https://github.com/ZarTek-Creole pour sont temps libres #
+#   Remerciement à ZarTek de https://github.com/ZarTek-Creole pour son temps libre  #
 #####################################################################################
 namespace eval ::PREEDb0t {
 	array set mysql_ [list 													\
