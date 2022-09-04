@@ -38,7 +38,7 @@ proc ::PREEDb0t::nuke { nick uhost hand chan arg } {
 	if { ${SQL_ID} != "" } {
 		putlog "La release \002${nuke_(release)}\002 à été NUKE par ${chan}/${nick} (ID: ${SQL_ID})";
 		set IRC_MSG [format "\002\0033(\0034NUKE\0033)\002\0037 (%s - %s)\0030 %s" ${nuke_(raison)} ${nuke_(net)} ${nuke_(release)}]
-		putquick "privmsg ${chan_(nuke)} :${IRC_MSG}"
+		putquick "privmsg ${::PREEDb0t::chan_(nuke)} :${IRC_MSG}"
 	}
 	return -1
 }
