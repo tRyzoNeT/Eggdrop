@@ -2,9 +2,9 @@ if { [catch { package require PREEDb0t 2.0 }] } { die "\[preed.tcl - erreur\] le
 
 proc ::PREEDb0t::MySQL:KeepAlive {} {
 	if { ![info exists ::PREEDb0t::mysql_(handle)] || [mysql::state ${::PREEDb0t::mysql_(handle)} -numeric] == 0 || ![mysql::ping ${::PREEDb0t::mysql_(handle)}] } {
-		if { [catch { set ::PREEDb0t::mysql_(handle) [::mysql::connect -host ${::PREEDb0t::mysql_(host)} -user ${::PREEDb0t::mysql_(user)} -password ${::PREEDb0t::mysql_(password)} -db ${::PREEDb0t::mysql_(db)}] } MYSQL_ERR] } {
+		if { [catch { set ::PREEDb0t::mysql_(handle) [::mysql::connect -multistatement 1 -host ${::PREEDb0t::mysql_(host)} -user ${::PREEDb0t::mysql_(user)} -password ${::PREEDb0t::mysql_(password)} -db ${::PREEDb0t::mysql_(db)}] } MYSQL_ERR] } {
 			if { [string match "*Access*denied*" ${MYSQL_ERR}] } {
-				die "PREEDb0t: Verifier les informations MySQ"
+				die "PREEDb0t: Verifier les informations MySQL"
 			}
 			die "SQL FATAL ERROR (::mysql::connect): ${MYSQL_ERR}"
 		}
