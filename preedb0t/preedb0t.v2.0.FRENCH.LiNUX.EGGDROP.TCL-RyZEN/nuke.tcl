@@ -6,7 +6,6 @@ proc ::PREEDb0t::nuke { nick uhost hand chan arg } {
 	set nuke_(release)  [lindex ${arg} 0]
 	set nuke_(raison)   [lindex ${arg} 1]
 	set nuke_(net)      [lindex ${arg} 2]
-	set nuke_(group) 	[lindex [split ${nuke_(release)} -] end]
 	if { ![channel get ${chan} p2nuker] } {
 		putlog "L'utilisateur ${nick} à tenté un !nuke sur ${chan}, mais le salon n'a pas les *flags* nécessaire."
 		return 0;
@@ -15,7 +14,7 @@ proc ::PREEDb0t::nuke { nick uhost hand chan arg } {
 	# si nuke_(net) est manquant, forcement ce n'ai pas bon, pas besoin de verifier addpre_(section), addpre_(section), addpre_(release)
 	# ATTENTION : dans addpre.tcl nuke_(net) s'apelle addpre(source),
 	# il est recommander de nommer tous source, ou tous net, mais pas une fois l'un puis l'autre pour respecter une logique
-	if { nuke_(net) == "" } {
+	if { ${nuke_(net)} == "" } {
 		putquick "privmsg ${chan} \002\0033(\0034NUKE\0033)\002\0037 Syntax * !nuke <nom.de.la.release> <nuke.raison> <nukenet>"
 		return 0;
 	}
