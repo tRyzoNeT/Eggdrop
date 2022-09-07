@@ -1,5 +1,7 @@
 # preedb0t.*.FRENCH.LiNUX.EGGDROP.TCL-RyZEN #
 
+Les versions preedb0t.1.x sont à present dans _archives/
+
 Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl ( fichier de configuration preed.tcl )
 
 - Chacune des commandes à son propre TCL pour éviter le lag.
@@ -22,6 +24,6 @@ Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl ( fi
 
 **LA VERSiON 2.0?!?**
 
+- Le code est revu entierement pour être optimiser avec TCL 1.6+ et eggdrop 1.9+
 - Simplification & Re-Structuration du code, accélère doublement les commandes du eggdrop et éviter des bugs dans le futur...
-
-Une connexion 'OUVERTE' au serveur mySQLd (KEEPMYSQLOPEN) toujours dans cette version de **TCL**.
+- La connexion MySQL reste ouverte pour accelerer les access a celle-ci et avoir un gain de réponse accru au commandes.
