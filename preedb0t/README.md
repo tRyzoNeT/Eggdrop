@@ -1,6 +1,6 @@
 # preedb0t.*.FRENCH.LiNUX.EGGDROP.TCL-RyZEN #
 
-Les versions preedb0t.1.x sont à present dans _archives/
+Les versions preedb0t.1.x sont à present dans [_archives/](https://github.com/tRyzoNeT/Eggdrop/blob/70174c34d463dc7a11fbc6d8e6f632b2bb2c5e69/preedb0t/_archives)
 
 Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - mysqltcl ( fichier de configuration preed.tcl )
 
