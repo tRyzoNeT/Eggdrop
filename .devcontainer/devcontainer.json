@@ -31,7 +31,8 @@
 				"bitwisecook.tcl",
 				"Gruntfuggly.todo-tree",
 				"jgclark.vscode-todo-highlight",
-				"rashwell.tcl"
+				"rashwell.tcl",
+				"ms-vscode.notepadplusplus-keybindings"
 			]
 		}
 	}

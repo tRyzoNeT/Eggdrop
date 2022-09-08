@@ -4,12 +4,18 @@
 
 -------------------------------------------------------------------------------------------------------
 
-Ce qui est nécessaire au bon fonctionnement :: eggdrop - mysqld - MySQL
-Apt install tcl tcl-dev libssl-dev mysqltcl
-- Chaque commande à son propre TCL pour éviter le lag.
-- Charger vos TCL sur des EggDrops différents et des serveurs différents.
+# Ce qui est nécessaire au bon fonctionnement :: 
+- Les packages debian/ubuntu: ```apt install build-essential libssl-dev```
+- [eggdrop](https://www.eggheads.org/) (1.9.3 et plus recommandé) Robot IRC ```git clone https://github.com/eggheads/eggdrop.git```
+- [TCL](https://www.tcl.tk/software/tcltk/download.html) (8.6 et plus recommandé) Language TCL ```apt install build-essential tcl tcl-dev  ```
+- [MariaDB](https://mariadb.org/download/?t=mariadb&p=mariadb) (10.5.x et plus recommandé) Base de données ```apt install mariadb-server```
+- [Tcllib](https://www.tcl.tk/software/tcllib/) (1.20 et plus recommandé) Outils TCL ```apt install tcllib```
+- [TclTLS](https://core.tcl-lang.org/tcltls/wiki/Download) (1.7.22 et plus recommandé) Support TLS/SSL pour TCL ```apt install tcl-tls```
+- [MySQLTCL](http://www.xdobry.de/mysqltcl/) (3.052 et plus recommandé) Client MySQL/MariaDB pour TCL ```apt install mysqltcl```
+
+# Ce qui est recommandée en plus
+- Chaque commande du script à son propre TCL dedié, vous pouvez charger **un tcl par EggDrop**s différents et des serveurs différents.
 - **Une connexion gigabit (Gbit) est recommandée.**
-- Assurez-vous d'avoir une base de données MySQL rapide et performant.
 - **Disque dur SSD recommander ou NVME pour de meilleures performances.**
 
   -------------------------------------------------------------------------------------------------------
