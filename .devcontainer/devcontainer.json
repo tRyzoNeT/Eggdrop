@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/debian
 {
-	"name": "Debian",
+	"name": "tRyzoNeT-PREEDb0t",
 	"build": {
 		"dockerfile": "Dockerfile",
 		// Update 'VARIANT' to pick an Debian version: bullseye, buster
@@ -23,7 +23,15 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"bitwisecook.tcl"
+				"GitHub.codespaces",
+				"yzhang.markdown-all-in-one",
+				"beatrix.gitignore-adder",
+				"eamodio.gitlens",
+				"michelemelluso.gitignore",
+				"bitwisecook.tcl",
+				"Gruntfuggly.todo-tree",
+				"jgclark.vscode-todo-highlight",
+				"rashwell.tcl"
 			]
 		}
 	}
