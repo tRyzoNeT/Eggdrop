@@ -5,10 +5,10 @@
 #####################################################################################
 namespace eval ::PREEDb0t {
 	array set mysql_ [list 													\
-		"user" 			"sql_user"											\
-		"password" 		"sql_pass"											\
-		"host" 			"sql_hostip"										\
-		"db" 			"sql_database"										\
+	"user" 			"PREEDb0t"											\
+		"password" 		"MyPassW0RDpr3"										\
+		"host" 			"localhost"											\
+		"db" 			"PREEDb0t"											\
 		"table" 		"sql_tabledb"										\
 	];
 	################################################################################

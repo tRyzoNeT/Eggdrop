@@ -1,28 +1,19 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/debian
+// Update the VARIANT arg in docker-compose.yml to pick a PHP version
 {
-	"name": "tRyzoNeT-PREEDb0t",
-	"build": {
-		"dockerfile": "Dockerfile",
-		// Update 'VARIANT' to pick an Debian version: bullseye, buster
-		// Use bullseye on local arm64/Apple Silicon.
-		"args": { "VARIANT": "bullseye" }
-	},
+	"name": "tRyzoNeT-VSCS-PREEDb0t",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
-	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
-
-	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust
-	// "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
-
-	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode",
+	// Configure tool-specific properties.
 	"customizations": {
+		// Configure properties specific to VS Code.
 		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
+				"xdebug.php-debug",
+				"bmewburn.vscode-intelephense-client",
+				"mrmlnc.vscode-apache",
 				"GitHub.codespaces",
 				"yzhang.markdown-all-in-one",
 				"beatrix.gitignore-adder",
@@ -32,8 +23,23 @@
 				"Gruntfuggly.todo-tree",
 				"jgclark.vscode-todo-highlight",
 				"rashwell.tcl",
-				"ms-vscode.notepadplusplus-keybindings"
+				"ms-vscode.notepadplusplus-keybindings",
+				"streetsidesoftware.code-spell-checker",
+				"DavidAnson.vscode-markdownlint",
+				"shd101wyy.markdown-preview-enhanced",
+				"bierner.github-markdown-preview",
+				"MS-CEINTL.vscode-language-pack-fr",
+				"cweijan.vscode-mysql-client2"
 			]
 		}
-	}
+	},
+	// For use with PHP or Apache (e.g.php -S localhost:8080 or apache2ctl start)
+	"forwardPorts": [
+		8080,
+		3306
+	],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
 }
