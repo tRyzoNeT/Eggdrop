@@ -30,7 +30,7 @@ Ce TCL garde toujours une connexion 'OUVERTE' au serveur mySQLd (KEEPMYSQLOPEN) 
 et le LAG est beaucoup moins, car il y a toujours une connexion 'OUVERTE' au serveur mySQLd.
 
   -------------------------------------------------------------------------------------------------------
-  
+
 iNDEX de nos FLAGS :: **p2add - p2db - p2nuker - p2search - p2stats**
 
 - FLAG 'p2add' :: Ajouter à la Database toute information possible
