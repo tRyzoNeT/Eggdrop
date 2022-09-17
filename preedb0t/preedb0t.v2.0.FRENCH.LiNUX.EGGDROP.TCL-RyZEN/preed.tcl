@@ -5,11 +5,12 @@
 #####################################################################################
 namespace eval ::PREEDb0t {
 	array set mysql_ [list 													\
-	"user" 			"PREEDb0t"											\
-		"password" 		"MyPassW0RDpr3"										\
-		"host" 			"localhost"											\
-		"db" 			"PREEDb0t"											\
-		"table" 		"sql_tabledb"										\
+		"user" 			"mysql.users"										\
+		"password" 		"mot.de.pass"										\
+		"host" 			"ip"										\
+		"db" 			"mysql.database"									\
+		"table" 		"maindb"											\
+		"tablenuke" 	"nukedb"											\
 	];
 	################################################################################
 	array set db_ [list														\
@@ -29,64 +30,33 @@ namespace eval ::PREEDb0t {
 		"nfosize" 				"nfosize"									\
 		"sfvname" 				"sfvname"									\
 		"sfvsize" 				"sfvsize"									\
-		"nuke" 					"nuke"										\
+		"nuke_status" 			"nuke_status"								\
 		"nuke_ctime" 			"nuke_ctime"								\
 		"nuke_reason" 			"nuke_reason"								\
 		"nuke_net" 				"nuke_net"									\
-		"moddelpre" 			"moddelpre"									\
-		"moddelpre_ctime" 		"moddelpre_ctime"							\
-		"moddelpre_reason" 		"moddelpre_reason"							\
-		"moddelpre_net" 		"moddelpre_net"								\
-		"modnuke" 				"modnuke"									\
-		"modnuke_ctime" 		"modnuke_ctime"								\
-		"modnuke_reason" 		"modnuke_reason"							\
-		"modnuke_net"			"modnuke_net"								\
-		"modunnuke"				"modunnuke"									\
-		"modunnuke_ctime"		"modunnuke_ctime"							\
-		"modunnuke_reason"		"modunnuke_reason"							\
-		"modunnuke_net"			"modunnuke_net"								\
-		"unnuke"				"unnuke"									\
-		"unnuke_ctime"			"unnuke_ctime"								\
-		"unnuke_reason"			"unnuke_reason"								\
-		"unnuke_net" 			"unnuke_net"								\
-		"delpre" 				"delpre"									\
-		"delpre_ctime" 			"delpre_ctime"								\
-		"delpre_reason" 		"delpre_reason"								\
-		"delpre_net" 			"delpre_net"								\
-		"undelpre" 				"undelpre"									\
-		"undelpre_ctime" 		"undelpre_ctime"							\
-		"undelpre_reason" 		"undelpre_reason"							\
-		"undelpre_net" 			"undelpre_net"								\
-		"rls_addpre" 			"rls_addpre"								\
-		"rls_addpre_nick"		"rls_addpre_nick"							\
-		"rls_addpre_chan" 		"rls_addpre_chan"							\
-		"rls_addpre_network" 	"rls_addpre_network"						\
-		"rls_addpre_source" 	"rls_addpre_source"							\
-		"rls_addold" 			"rls_addold"								\
-		"rls_addold_nick" 		"rls_addold_nick"							\
-		"rls_addold_chan" 		"rls_addold_chan"							\
-		"rls_addold_netwok" 	"rls_addold_network"						\
-		"rls_addold_source" 	"rls_addold_source"							\
-		"rls_sitepre" 			"rls_sitepre"								\
-		"rls_sitepre_nick" 		"rls_sitepre_nick"							\
-		"rls_sitepre_chan" 		"rls_sitepre_chan"							\
-		"rls_sitepre_netwok" 	"rls_sitepre_network"						\
-		"rls_sitepre_source" 	"rls_sitepre_source"						\
-		"rls_readd" 			"rls_readd"									\
-		"rls_readd_nick" 		"rls_readd_nick"							\
-		"rls_readd_chan"     	"rls_readd_chan"							\
-		"rls_readd_network"  	"rls_readd_network"							\
-		"rls_readd_source"   	"rls_readd_source"							\
+		"rlsstatus"	 			"status"									\
+	];
+	array set nuke_ [list													\
+		"id" 					"id"										\
+		"rlsname" 				"rlsname"									\
+		"grp" 					"grp"										\
+		"status"	 			"status"									\
+		"ctime" 				"ctime"										\
+		"reason"	 			"reason"									\
+		"nukenet" 				"nukenet"									\
 	];
 	################################################################################
 	setudef flag p2add
 	setudef flag p2nuker
+	setudef flag p2db
+	setudef flag p2stats
+	setudef flag p2search
 	################################################################################
 	array set chan_ [list													\
-		"add"					"#chan"										\
-		"pred"					"#chan"										\
-		"nuke"					"#chan"										\
-		"stats"					"#chan"										\
+		"add"					"#chan"									\
+		"pred"					"#chan"									\
+		"nuke"					"#chan"									\
+		"stats"					"#chan"									\
 	];
 	################################################################################
 	# Note de ZarTeK:
