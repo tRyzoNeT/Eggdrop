@@ -51,7 +51,7 @@ iNDEX de nos FLAGS :: **p2add - p2db - p2nuker - p2search - p2stats**
 - CMD :: **!hour**
 
   -------------------------------------------------------------------------------------------------------
-  
+
 CONFiGURATiON DES FLAGS ::
 
 - Commencez par vous connecter en DCC CHAT avec votre eggdrop
