@@ -1,4 +1,4 @@
-if { [catch { package require PREEDb0t-SQL 2.0 }] } { die "\[unnuke.tcl - erreur\] le fichier connect.tcl doit être charger avant nunuke.tcl" ; return }
+if { [catch { package require PREEDb0t-SQL 2.0 }] } { die "\[nuke.tcl - erreur\] le fichier connect.tcl doit être charger avant nuke.tcl" ; return }
 bind pub -|- !nuke ::PREEDb0t::nuke
 proc ::PREEDb0t::nuke { nick uhost hand chan arg } {
  set N_Time   [clock seconds]
