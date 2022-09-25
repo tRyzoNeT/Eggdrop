@@ -1,47 +1,38 @@
 if { [catch { package require PREEDb0t-SQL 2.0 }] } { die "\[unnuke.tcl - erreur\] le fichier connect.tcl doit être charger avant nunuke.tcl" ; return }
 bind pub -|- !unnuke ::PREEDb0t::unnuke
 proc ::PREEDb0t::unnuke { nick uhost hand chan arg } {
-	set unnuke_(time)     [clock seconds]
-	set chan            [string tolower ${chan}]
-	set unnuke_(release)  [lindex ${arg} 0]
-	set unnuke_(raison)   [lindex ${arg} 1]
-	set unnuke_(net)  [lindex ${arg} 2]
-	set unnuke_(group)    [lindex [split ${unnuke_(release)} -] end]
-	if { ![channel get ${chan} p2nuker] } {
-		putlog "L'utilisateur ${nick} à tenté un !unnuke sur ${chan}, mais le salon n'a pas les *flags* nécessaire."
-		return 0;
-	}
-	if { ${unnuke_(net)} == "" } {
-		putquick "privmsg ${chan} \002\0033(UNNUKE)\002\0037 Syntax * !unnuke <nom.de.la.release> <unnuke.raison> <nukenet>"
-		return 0;
-	}
-    set SQL_INSERT          "INSERT IGNORE INTO ${::PREEDb0t::mysql_(tablenuke)} ( "
-    append SQL_INSERT          "`${::PREEDb0t::nuke_(rlsname)}`, `${::PREEDb0t::nuke_(grp)}`, "
-    append SQL_INSERT          "`${::PREEDb0t::nuke_(status)}`, `${::PREEDb0t::nuke_(ctime)}`, "
-    append SQL_INSERT          "`${::PREEDb0t::nuke_(reason)}`, `${::PREEDb0t::nuke_(nukenet)}` "
-    append SQL_INSERT       ") VALUES ( "
-    append SQL_INSERT           "'${unnuke_(release)}', '${unnuke_(group)}', "
-    append SQL_INSERT           "'unnuke', '${unnuke_(time)}', "
-    append SQL_INSERT           "'${unnuke_(raison)}', '${unnuke_(net)}' "
-    append SQL_INSERT       ");"
-    set SQL_RESULTAT 	[::mysql::exec ${::PREEDb0t::mysql_(handle)} ${SQL_INSERT}];
-	putlog "L'exécution de la requête a retourné: ${SQL_RESULTAT} pour ${unnuke_(release)}"
-    if { [::mysql::insertid ${::PREEDb0t::mysql_(handle)}] != "" } { 
-		putlog "La release \002${unnuke_(release)}\002 à été ajouter a la 'nukedb' par ${chan}/${nick} (ID: [::mysql::insertid ${::PREEDb0t::mysql_(handle)}])";
-	}
-	set SQL_UPDATE 		"UPDATE `${::PREEDb0t::mysql_(table)}` SET "
-	append SQL_UPDATE 		"`${::PREEDb0t::db_(nuke_status)}`		= 'unnuke', "
-	append SQL_UPDATE 		"`${::PREEDb0t::db_(nuke_ctime)}`		= '${unnuke_(time)}', "
-	append SQL_UPDATE 		"`${::PREEDb0t::db_(nuke_reason)}` 	= '${unnuke_(raison)}', "
-	append SQL_UPDATE 		"`${::PREEDb0t::db_(nuke_net)}` 	= '${unnuke_(net)}' "
-	append SQL_UPDATE	"WHERE `${::PREEDb0t::db_(rlsname)}` 	= '${unnuke_(release)}'";
-	set SQL_ID			[::mysql::exec ${::PREEDb0t::mysql_(handle)} ${SQL_UPDATE}];
-	putlog "L'exécution de la requête a retourné: ${SQL_ID} pour ${unnuke_(release)}"
-	if { ${SQL_ID} != "" } {
-		putlog "La release \002${unnuke_(release)}\002 à été UNNUKE par ${chan}/${nick} (ID: XxX)";
-		set IRC_MSG [format "\002\0033(UNNUKE)\002\0037 ${unnuke_(raison)} ${unnuke_(net)} ${unnuke_(release)}"]
-		putquick "privmsg ${::PREEDb0t::chan_(nuke)} :${IRC_MSG}"
-	}
-	#
-	return -1
+ set U_Time   [clock seconds]
+ set U_Name  [lindex ${arg} 0]
+ set U_Raison   [lindex ${arg} 1]
+ set U_Net  [lindex ${arg} 2]
+ set U_Grp    [lindex [split ${U_Name} -] end]
+ if { ![channel get ${chan} p2nuker] } {
+  putlog "L'utilisateur ${nick} à tenté un !unnuke sur ${chan}, mais le salon n'a pas les *flags* nécessaire."
+  return 0;
+ }
+ if { ${U_Net} == "" } {
+  putquick "privmsg ${chan} \002\0033(UNNUKE)\002\0037 Syntax * !unnuke <nom.de.la.release> <unnuke.raison> <nukenet>"
+  return 0;
+ }
+ set U_Sql      "INSERT IGNORE INTO ${::PREEDb0t::mysql_(tablenuke)} ( `${::PREEDb0t::nuke_(rlsname)}`, `${::PREEDb0t::nuke_(grp)}`, `${::PREEDb0t::nuke_(status)}`, `${::PREEDb0t::nuke_(ctime)}`, `${::PREEDb0t::nuke_(reason)}`, `${::PREEDb0t::nuke_(nukenet)}` ) ";
+ append U_Sql   "VALUES ( '${U_Name}', '${U_Grp}', 'unnuke', '${U_Time}', '${U_Raison}', '${U_Net}' );";
+ set U_Sqld 	[::mysql::exec ${::PREEDb0t::mysql_(handle)} ${U_Sql}];
+ putlog "L'exécution de la requête a retourné: ${U_Sqld} pour ${U_Name}"
+ if { [::mysql::insertid ${::PREEDb0t::mysql_(handle)}] != "" } { 
+  putlog "La release \002${U_Name}\002 à été ajouter a la 'nukedb' par ${chan}/${nick} (ID: [::mysql::insertid ${::PREEDb0t::mysql_(handle)}])";
+ }
+ set U_SqlUP      "UPDATE `${::PREEDb0t::mysql_(table)}` ";
+ append U_SqlUP   "SET `${::PREEDb0t::db_(nuke_status)}`='unnuke', `${::PREEDb0t::db_(nuke_ctime)}`='${U_Time}', `${::PREEDb0t::db_(nuke_reason)}`='${U_Raison}', `${::PREEDb0t::db_(nuke_net)}`='${U_Net}' ";
+ append U_SqlUP   "WHERE `${::PREEDb0t::db_(rlsname)}`= '${U_Name}';";
+ set U_SqldUP     [::mysql::exec ${::PREEDb0t::mysql_(handle)} ${U_SqlUP}];
+ set U_Sqldid1    "SELECT `${::PREEDb0t::db_(id)}` FROM `${::PREEDb0t::mysql_(table)}` WHERE `${::PREEDb0t::db_(rlsname)}` LIKE '${U_Name}%'";
+ set U_Sqldid2    [::mysql::sel ${::PREEDb0t::mysql_(handle)} ${U_Sqldid1} -flatlist];
+ lassign  ${U_Sqldid2} U_Id;
+ putlog "L'exécution de la requête a retourné: ${U_SqldUP} pour ${U_Name}";
+ if { ${U_SqldUP} != "" } {
+  putlog "La release \002${U_Name}\002 à été UNNUKE par ${chan}/${nick} (ID: ${U_Id})";
+  set U_IMSG [format "\002\0033(UNNUKE)\002\0037 ${U_Raison} ${U_Net} ${U_Name}"]
+  putquick "privmsg ${::PREEDb0t::chan_(nuke)} :${U_IMSG}"
+ }
+ return -1
 }
