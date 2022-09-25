@@ -31,7 +31,7 @@ proc ::PREEDb0t::unnuke { nick uhost hand chan arg } {
  putlog "L'exécution de la requête a retourné: ${U_SqldUP} pour ${U_Name}";
  if { ${U_SqldUP} != "" } {
   putlog "La release \002${U_Name}\002 à été UNNUKE par ${chan}/${nick} (ID: ${U_Id})";
-  set U_IMSG [format "\002\0033(UNNUKE)\002\0037 ${U_Raison} ${U_Net} ${U_Name}"]
+  set U_IMSG [format "\002\0033(UNNUKE)\002\0037 ${U_Name} \0033-\00315 ${U_Raison} \0033(\00311${U_Net}\0033)"]
   putquick "privmsg ${::PREEDb0t::chan_(nuke)} :${U_IMSG}"
  }
  return -1
