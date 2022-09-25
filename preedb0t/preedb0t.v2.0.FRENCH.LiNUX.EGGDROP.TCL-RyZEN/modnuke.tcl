@@ -31,7 +31,7 @@ proc ::PREEDb0t::modnuke { nick uhost hand chan arg } {
  putlog "L'exécution de la requête a retourné: ${MN_Sqld} pour ${MN_Name}"
  if { ${MN_SqldUP} != "" } {
   putlog "La release \002${MN_Name}\002 à été MODNUKE par ${chan}/${nick} (ID: ${MN_Id})";
-  set MN_IMSG [format "\002\0033(\0035MODNUKE\0033)\002\0037 ${MN_Raison} ${MN_Net} ${MN_Name}"]
+  set MN_IMSG [format "\002\0033(\0035MODNUKE\0033)\002\0037 ${MN_Name} \0033-\00315 ${MN_Raison} \0033(\00311${MN_Net}\0033)"]
   putquick "privmsg ${::PREEDb0t::chan_(nuke)} :${MN_IMSG}"
  }
  return -1
