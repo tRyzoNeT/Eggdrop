@@ -1,3 +1,5 @@
 {
-    "DockerRun.DisableDockerrc": true
+	"DockerRun.DisableDockerrc": true,
+	"editor.insertSpaces": false,
+	"editor.tabSize": 4
 }

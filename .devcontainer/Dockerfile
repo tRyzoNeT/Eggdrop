@@ -1,40 +1,32 @@
-# [Choice] PHP version (use -bullseye variants on local arm64/Apple Silicon): 8, 8.1, 8.0, 7, 7.4, 7.3, 8-bullseye, 8.1-bullseye, 8.0-bullseye, 7-bullseye, 7.4-bullseye, 7.3-bullseye, 8-buster, 8.1-buster, 8.0-buster, 7-buster, 7.4-buster
-ARG VARIANT=8-bullseye
-FROM mcr.microsoft.com/vscode/devcontainers/php:0-${VARIANT}
+# Use the [Choice] comment to indicate option arguments that should appear in VS Code UX. Use a comma separated list.
+#
+# [Choice] Debian OS version: bullseye, buster
+ARG VARIANT="bullseye"
+FROM buildpack-deps:${VARIANT}-curl
 
-# Install MariaDB client
+# Use the [Option] comment to specify true/false arguments that should appear in VS Code UX
+#
+# [Option] Install zsh
+ARG INSTALL_ZSH="true"
+# [Option] Upgrade OS packages to their latest versions
+ARG UPGRADE_PACKAGES="false"
+# Install needed packages and setup non-root user. Use a separate RUN statement to add your own dependencies.
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+# Install needed packages and setup non-root user. Use a separate RUN statement to add your own dependencies.
+COPY library-scripts/*.sh library-scripts/*.env /tmp/library-scripts/
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y mariadb-client \ 
-    && apt-get clean -y && rm -rf /var/lib/apt/lists/*
-
-# Install php-mysql driver
-RUN docker-php-ext-install mysqli pdo pdo_mysql
-
-# [Choice] Node.js version: none, lts/*, 16, 14, 12, 10
-ARG NODE_VERSION="none"
-RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
+    && /bin/bash /tmp/library-scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" "true" "true" \
+    #
+    # ****************************************************************************
+    # * TODO: Add any additional OS packages you want included in the definition *
+    # * here. We want to do this before cleanup to keep the "layer" small.       *
+    # ****************************************************************************
+    # && apt-get -y install --no-install-recommends <your-package-list-here> \
+    #
+    && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
 # [Optional] Uncomment this section to install additional OS packages.
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-  && apt-get -y install --no-install-recommends tcl tcl-dev git tcllib tcl-tls build-essential
-
-
-
-# install httpie
-RUN apt install -y httpie
-
-# install flyway
-WORKDIR /usr/local
-RUN wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/8.0.0-beta1/flyway-commandline-8.0.0-beta1-linux-x64.tar.gz \
-| tar xvz && sudo ln -s `pwd`/flyway-8.0.0-beta1/flyway /usr/local/bin
-
-# install eggdrop
-RUN git clone https://github.com/eggheads/eggdrop.git /workspaces/eggdrop-src
-RUN cd /workspaces/eggdrop-src && \
-./configure && \
-make config && \
-make && \
-make install DEST=/workspaces/eggdrop
-# [Optional] Uncomment this line to install global node packages.
-# RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
-
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends <your-package-list-here>
