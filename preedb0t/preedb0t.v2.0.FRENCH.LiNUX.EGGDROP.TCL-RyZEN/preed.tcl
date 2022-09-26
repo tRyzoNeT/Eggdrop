@@ -11,7 +11,7 @@ namespace eval ::PREEDb0t {
 		"db" 			"mysql.database"									\
 		"table" 		"maindb"											\
 		"tablenuke" 	"nukedb"											\
-	];
+		];
 	################################################################################
 	array set db_ [list														\
 		"id" 					"id"										\
@@ -35,7 +35,7 @@ namespace eval ::PREEDb0t {
 		"nuke_reason" 			"nuke_reason"								\
 		"nuke_net" 				"nuke_net"									\
 		"rlsstatus"	 			"status"									\
-	];
+		];
 	array set nuke_ [list													\
 		"id" 					"id"										\
 		"rlsname" 				"rlsname"									\
@@ -44,7 +44,7 @@ namespace eval ::PREEDb0t {
 		"ctime" 				"ctime"										\
 		"reason"	 			"reason"									\
 		"nukenet" 				"nukenet"									\
-	];
+		];
 	################################################################################
 	setudef flag p2add
 	setudef flag p2nuker
@@ -57,10 +57,10 @@ namespace eval ::PREEDb0t {
 		"pred"					"#chan"									\
 		"nuke"					"#chan"									\
 		"stats"					"#chan"									\
-	];
+		];
 	################################################################################
 	# Note de ZarTeK:
-	# Il est plus simple d'installer mysqltcl de nos jours, sous debian/ubuntu 
+	# Il est plus simple d'installer mysqltcl de nos jours, sous debian/ubuntu
 	# 	apt install mysqltcl
 	# Pour charger sufis de faire ceci:
 	#load /usr/lib64/tcl8.5/mysqltcl-3.052/libmysqltcl3.052.so
