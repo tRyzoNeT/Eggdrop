@@ -35,7 +35,9 @@
 		"cweijan.vscode-mysql-client2",
 		"mtxr.sqltools",
 		"slenderman00.vsirc",
-		"psioniq.psi-header"
+		"psioniq.psi-header",
+		"adamvoss.vscode-languagetool",
+		"valentjn.vscode-ltex"
 	],
 	"forwardPorts": [
 			6667,

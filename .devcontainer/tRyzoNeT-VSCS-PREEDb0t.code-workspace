@@ -31,6 +31,10 @@
 			[
 				"url",
 				"https://github.com/tRyzoNeT/Eggdrop/tree/master/preedb0t/preedb0t.v2.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN",
+			],
+			[
+				"nomduprojet",
+				"preedb0t.v2.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN",
 			]
 		],
 		"psi-header.lang-config": [
@@ -58,7 +62,7 @@
 				"language": "*",
 				"template": [
 					"",
-					"Projet:              <<projectname>>",
+					"Projet:              <<nomduprojet>>",
 					"Les contributeurs:   <<contributeurs>>",
 					"",
 					"Fichier:             <<filename>>",
@@ -84,6 +88,8 @@
 					"<<dateformat(DD-MM-YYYY)>>\t<<initials>>\t\t"
 				]
 			}
-		]
+		],
+		"languageTool.language": "fr",
+		"cSpell.language": "en,fr-90,fr,lorem"
 	}
 }

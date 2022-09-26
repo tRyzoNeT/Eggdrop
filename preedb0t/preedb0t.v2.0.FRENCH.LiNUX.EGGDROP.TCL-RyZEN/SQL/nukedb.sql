@@ -1,6 +1,6 @@
 /*
  * 
- * Projet:              SQL
+ * Projet:              preedb0t.v2.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN
  * Les contributeurs:   og & ZarTek-Creole
  * 
  * Fichier:             nukedb.sql
@@ -39,6 +39,8 @@
  * SOFTWARE.
  * 
  */
+
+
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
