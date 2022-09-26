@@ -34,7 +34,8 @@
 		"MS-CEINTL.vscode-language-pack-fr",
 		"cweijan.vscode-mysql-client2",
 		"mtxr.sqltools",
-		"slenderman00.vsirc"
+		"slenderman00.vsirc",
+		"psioniq.psi-header"
 	],
 	"forwardPorts": [
 			6667,
