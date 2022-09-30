@@ -3,11 +3,11 @@
 # Projet:              preedb0t.v2.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN                                                   # 
 # Les contributeurs:   og & ZarTek-Creole                                                                             # 
 #                                                                                                                     # 
-# Fichier:             delpre.tcl                                                                                     # 
-# Fichier crée le:     30 September 2022 15:37:00                                                                     # 
+# Fichier:             moddelpre.tcl                                                                                  # 
+# Fichier crée le:     30 September 2022 16:29:00                                                                     # 
 # Créateur du fichier: og                                                                                             # 
 #                                                                                                                     # 
-# Derniere modif le:   30 September 2022 15:37:00                                                                     # 
+# Derniere modif le:   30 September 2022 16:29:00                                                                     # 
 # Modifier par:        og                                                                                             # 
 #                                                                                                                     # 
 # Site web: https://github.com/tRyzoNeT/Eggdrop/tree/master/preedb0t/preedb0t.v2.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN     # 
@@ -40,49 +40,49 @@
 #                                                                                                                     # 
 # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # *
 
-proc ::PREEDb0t::delpre:init { args } {
+proc ::PREEDb0t::moddelpre:init { args } {
 	if { [catch { package require PREEDb0t-SQL 2.0 }] } { 
-		set MSG_ERROR "\[delpre.tcl - erreur\] le fichier mysql.tcl doit être charger avant delpre.tcl"
+		set MSG_ERROR "\[moddelpre.tcl - erreur\] le fichier mysql.tcl doit être charger avant moddelpre.tcl"
 		return -code error ${MSG_ERROR};
 	}
 	package provide PREEDb0t-FCT 2.0
 }
-::PREEDb0t::delpre:init
+::PREEDb0t::moddelpre:init
 
-bind pub -|- !delpre ::PREEDb0t::delpre
-proc ::PREEDb0t::delpre { nick uhost hand chan arg } {
- set D_Time   [clock seconds]
- set D_Name   [lindex ${arg} 0]
- set D_Raison [lindex ${arg} 1]
- set D_Net    [lindex ${arg} 2]
- set D_Grp    [lindex [split ${D_Name} -] end]
+bind pub -|- !moddelpre ::PREEDb0t::moddelpre
+proc ::PREEDb0t::moddelpre { nick uhost hand chan arg } {
+ set MD_Time   [clock seconds]
+ set MD_Name   [lindex ${arg} 0]
+ set MD_Raison [lindex ${arg} 1]
+ set MD_Net    [lindex ${arg} 2]
+ set MD_Grp    [lindex [split ${MD_Name} -] end]
  if { ![channel get ${chan} p2nuker] } {
-  putlog "L'utilisateur ${nick} à tenté un !delpre sur ${chan}, mais le salon n'a pas les *flags* nécessaire."
+  putlog "L'utilisateur ${nick} à tenté un !moddelpre sur ${chan}, mais le salon n'a pas les *flags* nécessaire."
   return 0;
  }
- if { ${D_Net} == "" } {
-  putquick "privmsg ${chan} \002\0033(\00314DELPRE\0033)\002\0037 Syntax * !delpre <nom.de.la.release> <delpre.raison> <nukenet>"
+ if { ${MD_Net} == "" } {
+  putquick "privmsg ${chan} \002\0033(\00313MODdELPRE\0033)\002\0037 Syntax * !moddelpre <nom.de.la.release> <moddelpre.raison> <nukenet>"
   return 0;
  }
- set D_Sql      "INSERT IGNORE INTO ${::PREEDb0t::mysql_(tablenuke)} ( `${::PREEDb0t::nuke_(rlsname)}`, `${::PREEDb0t::nuke_(grp)}`, `${::PREEDb0t::nuke_(status)}`, `${::PREEDb0t::nuke_(ctime)}`, `${::PREEDb0t::nuke_(reason)}`, `${::PREEDb0t::nuke_(nukenet)}` ) ";
- append D_Sql   "VALUES ( '${D_Name}', '${D_Grp}', 'delpre', '${D_Time}', '${D_Raison}', '${D_Net}' );";
- set D_Sqld 	[::mysql::exec ${::PREEDb0t::mysql_(handle)} ${D_Sql}];
- putlog "L'exécution de la requête a retourné: ${D_Sqld} pour ${D_Name}"
+ set MD_Sql     "INSERT IGNORE INTO ${::PREEDb0t::mysql_(tablenuke)} ( `${::PREEDb0t::nuke_(rlsname)}`, `${::PREEDb0t::nuke_(grp)}`, `${::PREEDb0t::nuke_(status)}`, `${::PREEDb0t::nuke_(ctime)}`, `${::PREEDb0t::nuke_(reason)}`, `${::PREEDb0t::nuke_(nukenet)}` )";
+ append MD_Sql  "VALUES ( '${MD_Name}', '${MD_Grp}', 'moddelpre', '${MD_Time}', '${MD_Raison}', '${MD_Net}' );";
+ set MD_Sqld 	[::mysql::exec ${::PREEDb0t::mysql_(handle)} ${MD_Sql}];
+ putlog "L'exécution de la requête a retourné: ${MD_Sqld} pour ${MD_Name}"
  if { [::mysql::insertid ${::PREEDb0t::mysql_(handle)}] != "" } { 
-  putlog "La release \002${D_Name}\002 à été ajouter a la 'nukedb' par ${chan}/${nick} (ID: [::mysql::insertid ${::PREEDb0t::mysql_(handle)}])";
+  putlog "La release \002${MD_Name}\002 à été ajouter a la 'nukedb' par ${chan}/${nick} (ID: [::mysql::insertid ${::PREEDb0t::mysql_(handle)}])";
  }
- set D_SqlUP      "UPDATE `${::PREEDb0t::mysql_(table)}` ";
- append D_SqlUP   "SET `${::PREEDb0t::db_(nuke_status)}`='nuke', `${::PREEDb0t::db_(nuke_ctime)}`='${D_Time}', `${::PREEDb0t::db_(nuke_reason)}`='${D_Raison}', `${::PREEDb0t::db_(nuke_net)}`='${D_Net}' ";
- append D_SqlUP   "WHERE `${::PREEDb0t::db_(rlsname)}`= '${D_Name}';";
- set D_SqldUP     [::mysql::exec ${::PREEDb0t::mysql_(handle)} ${D_SqlUP}];
- set D_Sqldid1    "SELECT `${::PREEDb0t::db_(id)}` FROM `${::PREEDb0t::mysql_(table)}` WHERE `${::PREEDb0t::db_(rlsname)}` LIKE '${D_Name}%'";
- set D_Sqldid2    [::mysql::sel ${::PREEDb0t::mysql_(handle)} ${D_Sqldid1} -flatlist];
- lassign  ${D_Sqldid2} D_Id;
- putlog "L'exécution de la requête a retourné: ${D_SqldUP} pour ${D_Name}";
- if { ${D_SqldUP} != "" } {
-  putlog "La release \002${D_Name}\002 à été DELPRE par ${chan}/${nick} (ID: ${D_Id})";
-  set D_IMSG [format "\002\0033(\00314DELPRE\0033)\002\0037 ${D_Name} \0033-\00315 ${D_Raison} \0033(\00311${D_Net}\0033)"]
-  putquick "privmsg ${::PREEDb0t::chan_(nuke)} :${D_IMSG}"
+ set MD_SqlUP 		"UPDATE `${::PREEDb0t::mysql_(table)}` ";
+ append MD_SqlUP 	"SET `${::PREEDb0t::db_(nuke_status)}`='moddelpre', `${::PREEDb0t::db_(nuke_ctime)}`='${MD_Time}', `${::PREEDb0t::db_(nuke_reason)}`='${MD_Raison}', `${::PREEDb0t::db_(nuke_net)}`='${MD_Net}' "
+ append MD_SqlUP	"WHERE `${::PREEDb0t::db_(rlsname)}`='${MD_Name}';";
+ set MD_SqldUP		[::mysql::exec ${::PREEDb0t::mysql_(handle)} ${MD_SqlUP}];
+ set MD_Sqldid1    "SELECT `${::PREEDb0t::db_(id)}` FROM `${::PREEDb0t::mysql_(table)}` WHERE `${::PREEDb0t::db_(rlsname)}` LIKE '${MD_Name}%'";
+ set MD_Sqldid2    [::mysql::sel ${::PREEDb0t::mysql_(handle)} ${MD_Sqldid1} -flatlist];
+ lassign  ${MD_Sqldid2} MD_Id;
+ putlog "L'exécution de la requête a retourné: ${MD_Sqld} pour ${MD_Name}"
+ if { ${MD_SqldUP} != "" } {
+  putlog "La release \002${MD_Name}\002 à été MODDELPRE par ${chan}/${nick} (ID: ${MD_Id})";
+  set MD_IMSG [format "\002\0033(\00313MODdELPRE\0033)\002\0037 ${MD_Name} \0033-\00315 ${MD_Raison} \0033(\00311${MD_Net}\0033)"]
+  putquick "privmsg ${::PREEDb0t::chan_(nuke)} :${MD_IMSG}"
  }
  return -1
 }
