@@ -7,8 +7,8 @@
 # Fichier crée le:     7 September 2022 9:31:31                                                                       # 
 # Créateur du fichier: ZarTek-Creole (https://github.com/ZarTek-Creole)                                               # 
 #                                                                                                                     # 
-# Derniere modif le:   7 September 2022 9:31:31                                                                       # 
-# Modifier par:        ZarTek-Creole (https://github.com/ZarTek-Creole)                                               # 
+# Derniere modif le:   30 September 2022 15:53:31                                                                     # 
+# Modifier par:        og                                                                                             # 
 #                                                                                                                     # 
 # Site web: https://github.com/tRyzoNeT/Eggdrop/tree/master/preedb0t/preedb0t.v2.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN     # 
 #                                                                                                                     # 
@@ -40,9 +40,7 @@
 #                                                                                                                     # 
 # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # *
 
-
-
-if { [catch { package require PREEDb0t 2.0 }] } { die "\[preed.tcl - erreur\] le fichier preed.tcl doit être charger en premier dans votre fichier eggdrop.conf" ; return }
+if { [catch { package require PREEDb0t 2.0 }] } { die "\[mysql.tcl - erreur\] le fichier configuration.tcl doit être charger en premier dans votre fichier eggdrop.conf" ; return }
 
 proc ::PREEDb0t::MySQL:KeepAlive {} {
 	if { ![info exists ::PREEDb0t::mysql_(handle)] || [mysql::state ${::PREEDb0t::mysql_(handle)} -numeric] == 0 || ![mysql::ping ${::PREEDb0t::mysql_(handle)}] } {

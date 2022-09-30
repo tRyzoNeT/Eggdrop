@@ -3,7 +3,7 @@
 # Projet:              preedb0t.v2.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN                                                   # 
 # Les contributeurs:   og & ZarTek-Creole                                                                             # 
 #                                                                                                                     # 
-# Fichier:             preed.tcl                                                                                      # 
+# Fichier:             configuration.tcl                                                                              # 
 # Fichier crée le:     24 September 2022 8:20:12                                                                      # 
 # Créateur du fichier: ZarTek-Creole (https://github.com/ZarTek-Creole)                                               # 
 #                                                                                                                     # 
@@ -40,19 +40,12 @@
 #                                                                                                                     # 
 # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # *
 
-
-
-#####################################################################################
-#                 PREEDb0t v2.0 par OG (2022) projet via tRyzoNeT                   #
-#####################################################################################
-#   Remerciement à ZarTek de https://github.com/ZarTek-Creole pour son temps libre  #
-#####################################################################################
 namespace eval ::PREEDb0t {
 	array set mysql_ [list 													\
-		"user" 			"mysql.users"										\
-		"password" 		"mot.de.pass"										\
-		"host" 			"ip"										\
-		"db" 			"mysql.database"									\
+		"user" 			"andy_p2users"										\
+		"password" 		"vA%oqOqyZ7._"										\
+		"host" 			"216.219.81.80"										\
+		"db" 			"andy_preedb0t20"									\
 		"table" 		"maindb"											\
 		"tablenuke" 	"nukedb"											\
 		];
@@ -108,8 +101,8 @@ namespace eval ::PREEDb0t {
 	# 	apt install mysqltcl
 	# Pour charger sufis de faire ceci:
 	#load /usr/lib64/tcl8.5/mysqltcl-3.052/libmysqltcl3.052.so
-	if { [catch { package require mysqltcl }] } { die "\[preed.tcl - erreur\] le script PREEDb0t nécessite le package mysqltcl pour fonctionner. Le chargement du script a été annulé. pour l'installer : apt install mysqltcl" ; return }
+	if { [catch { package require mysqltcl }] } { die "\[configuration.tcl - erreur\] le script PREEDb0t nécessite le package mysqltcl pour fonctionner. Le chargement du script a été annulé. pour l'installer : apt install mysqltcl" ; return }
 	package provide PREEDb0t 2.0
-	putlog "PREEDb0t v2.0 par OG (2022) chargé."
+	putlog "PREEDb0t v2.0 - contributeurs og & ZarTek-Creole (2022) chargé."
 	############################### END OF SCRIPT ##################################
 }

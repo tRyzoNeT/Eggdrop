@@ -7,7 +7,7 @@
 # Fichier crée le:     25 September 2022 11:55:49                                                                     # 
 # Créateur du fichier: ZarTek-Creole (https://github.com/ZarTek-Creole)                                               # 
 #                                                                                                                     # 
-# Derniere modif le:   30 September 2022 13:40:00                                                                     # 
+# Derniere modif le:   30 September 2022 15:31:00                                                                     # 
 # Modifier par:        og                                                                                             # 
 #                                                                                                                     # 
 # Site web: https://github.com/tRyzoNeT/Eggdrop/tree/master/preedb0t/preedb0t.v2.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN     # 
@@ -40,9 +40,15 @@
 #                                                                                                                     # 
 # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # * # *
 
+proc ::PREEDb0t::unnuke:init { args } {
+	if { [catch { package require PREEDb0t-SQL 2.0 }] } { 
+		set MSG_ERROR "\[unnuke.tcl - erreur\] le fichier mysql.tcl doit être charger avant unnuke.tcl"
+		return -code error ${MSG_ERROR};
+	}
+	package provide PREEDb0t-FCT 2.0
+}
+::PREEDb0t::unnuke:init
 
-
-if { [catch { package require PREEDb0t-SQL 2.0 }] } { die "\[unnuke.tcl - erreur\] le fichier connect.tcl doit être charger avant nunuke.tcl" ; return }
 bind pub -|- !unnuke ::PREEDb0t::unnuke
 proc ::PREEDb0t::unnuke { nick uhost hand chan arg } {
 	set U_Time   [clock seconds]
