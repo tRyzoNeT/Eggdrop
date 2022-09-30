@@ -61,7 +61,7 @@ proc ::PREEDb0t::delpre { nick uhost hand chan arg } {
   return 0;
  }
  if { ${D_Net} == "" } {
-  putquick "privmsg ${chan} \002\0033(\0034NUKE\0033)\002\0037 Syntax * !delpre <nom.de.la.release> <nuke.raison> <nukenet>"
+  putquick "privmsg ${chan} \002\0033(\0034NUKE\0033)\002\0037 Syntax * !delpre <nom.de.la.release> <delpre.raison> <nukenet>"
   return 0;
  }
  set D_Sql      "INSERT IGNORE INTO ${::PREEDb0t::mysql_(tablenuke)} ( `${::PREEDb0t::nuke_(rlsname)}`, `${::PREEDb0t::nuke_(grp)}`, `${::PREEDb0t::nuke_(status)}`, `${::PREEDb0t::nuke_(ctime)}`, `${::PREEDb0t::nuke_(reason)}`, `${::PREEDb0t::nuke_(nukenet)}` ) ";
