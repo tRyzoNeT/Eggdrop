@@ -42,10 +42,10 @@
 
 namespace eval ::PREEDb0t {
 	array set mysql_ [list 													\
-		"user" 			"andy_p2users"										\
-		"password" 		"vA%oqOqyZ7._"										\
-		"host" 			"216.219.81.80"										\
-		"db" 			"andy_preedb0t20"									\
+		"user" 			"user"										\
+		"password" 		"pass"										\
+		"host" 			"ip"										\
+		"db" 			"db"									\
 		"table" 		"maindb"											\
 		"tablenuke" 	"nukedb"											\
 		];
