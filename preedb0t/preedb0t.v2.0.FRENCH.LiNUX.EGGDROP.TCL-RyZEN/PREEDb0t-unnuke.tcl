@@ -7,8 +7,8 @@
 # Fichier crée le:     25 September 2022 11:55:49                                                                     # 
 # Créateur du fichier: ZarTek-Creole (https://github.com/ZarTek-Creole)                                               # 
 #                                                                                                                     # 
-# Derniere modif le:   25 September 2022 11:55:49                                                                     # 
-# Modifier par:        ZarTek-Creole (https://github.com/ZarTek-Creole)                                               # 
+# Derniere modif le:   30 September 2022 13:40:00                                                                     # 
+# Modifier par:        og                                                                                             # 
 #                                                                                                                     # 
 # Site web: https://github.com/tRyzoNeT/Eggdrop/tree/master/preedb0t/preedb0t.v2.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN     # 
 #                                                                                                                     # 
