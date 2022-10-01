@@ -1,4 +1,5 @@
-# Nous sommes toujours en DÉVeloppement & TeSt... Soyez à l'affut des mises a jours!! XD ##
+# Nous sommes toujours en DÉVeloppement & TeSt... ##
+## Soyez à l'affut des mises a jours!! XD ##
 
 # preedb0t.v2.0.FRENCH.LiNUX.EGGDROP.TCL-RyZEN
 
