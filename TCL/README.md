@@ -2,4 +2,4 @@
 
 + Re-Scene it... don't repack BiG!! XD
 
-- Simple AUTH Atheme & Anope v1... TCL simple, pratique et efficace!!!
+- SAAA *sAUTH Atheme & Anope* (Simple Auth Atheme Anope... TCL simple, pratique et efficace)
