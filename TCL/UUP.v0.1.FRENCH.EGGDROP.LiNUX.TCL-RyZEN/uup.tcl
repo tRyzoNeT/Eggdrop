@@ -30,7 +30,7 @@ proc UUP_Exec { nick uhost hand chan arg } {
         set UUP_LOGERR	[format "L'utilisateur %s à tenté la cmd !uptime sur %s, mais le salon n'a pas les *flags* necéssaire." ${nick} ${chan}]
         return -code error ${UUP_LOGERR};
     }
-    putquick "PRIVMSG ${chan} [UUP_Echo]"
+    putquick "PRIVMSG ${chan} :[UUP_Echo]"
     return 1
 }
 proc UUP_Echo { } {
